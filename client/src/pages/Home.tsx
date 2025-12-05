@@ -6,7 +6,10 @@ import heroImage from "@assets/generated_images/cinematic_modern_mining_site_her
 import explorationImage from "@assets/generated_images/geologists_examining_rock_samples.png";
 import machineryImage from "@assets/generated_images/heavy_mining_machinery_fleet.png";
 import tradingImage from "@assets/generated_images/raw_minerals_pile_close_up.png";
+import consultancyImage from "@assets/generated_images/mining_consultancy_professionals_meeting.png";
+import schoolImage from "@assets/generated_images/school_of_mines_students_learning.png";
 import { Link } from "wouter";
+import { Typewriter } from "@/components/ui/typewriter";
 
 export default function Home() {
   return (
@@ -22,7 +25,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-          <div className="max-w-3xl space-y-6 animate-in slide-in-from-left-10 duration-700 fade-in">
+          <div className="max-w-4xl space-y-6 animate-in slide-in-from-left-10 duration-700 fade-in">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-sm text-primary text-xs font-bold uppercase tracking-widest">
               <span className="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
               Building Nigeria's Mining Future
@@ -30,19 +33,23 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-white leading-tight">
               World-Class <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-200">
-                Mining Solutions
+                <Typewriter words={["Mining Solutions", "Mineral Trading", "Exploration", "Consultancy"]} />
               </span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 max-w-xl leading-relaxed">
               Eminent Mines Resources Limited delivers excellence in mineral exploration, trading, and mining consultancy. We bridge the gap between Nigeria's vast resources and global markets.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-base px-8 h-14">
-                Explore Our Services <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 font-bold text-base px-8 h-14 backdrop-blur-sm">
-                Contact Us
-              </Button>
+              <Link href="/services">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-base px-8 h-14 w-full sm:w-auto">
+                  Explore Our Services <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 font-bold text-base px-8 h-14 backdrop-blur-sm w-full sm:w-auto">
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -99,9 +106,11 @@ export default function Home() {
                 ))}
               </div>
 
-              <Button variant="outline" className="border-foreground/20 hover:bg-foreground hover:text-white font-bold mt-4">
-                Read CEO's Message
-              </Button>
+              <Link href="/about">
+                <Button variant="outline" className="border-foreground/20 hover:bg-foreground hover:text-white font-bold mt-4">
+                  Read CEO's Message
+                </Button>
+              </Link>
             </div>
             <div className="relative">
               <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-2xl">
@@ -128,27 +137,21 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Mining & Exploration", desc: "Full-scale site development, pit optimization, and mineral extraction.", img: heroImage },
-              { title: "Mineral Trading", desc: "Sourcing and exporting high-purity Lead, Zinc, Lithium, and Gold.", img: tradingImage },
-              { title: "Equipment Leasing", desc: "Heavy-duty excavators, crushers, and drilling rigs for rent.", img: machineryImage },
-              { title: "Water Engineering", desc: "Borehole drilling, hydrological surveys, and water treatment.", img: explorationImage }, // Reusing exploration image for now
-              { title: "Mining Consultancy", desc: "Regulatory compliance, licensing, and feasibility studies.", icon: true },
-              { title: "School of Mines", desc: "Professional training and certification for the next generation.", icon: true },
+              { title: "Mining & Exploration", desc: "Full-scale site development, pit optimization, and mineral extraction.", img: heroImage, link: "/services" },
+              { title: "Mineral Trading", desc: "Sourcing and exporting high-purity Lead, Zinc, Lithium, and Gold.", img: tradingImage, link: "/services" },
+              { title: "Equipment Leasing", desc: "Heavy-duty excavators, crushers, and drilling rigs for rent.", img: machineryImage, link: "/equipment" },
+              { title: "Water Engineering", desc: "Borehole drilling, hydrological surveys, and water treatment.", img: explorationImage, link: "/services" }, // Reusing exploration image for now
+              { title: "Mining Consultancy", desc: "Regulatory compliance, licensing, and feasibility studies.", img: consultancyImage, link: "/services" },
+              { title: "School of Mines", desc: "Professional training and certification for the next generation.", img: schoolImage, link: "/school" },
             ].map((service, i) => (
               <div key={i} className="group bg-white rounded-sm border border-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                {service.img ? (
-                  <div className="h-48 overflow-hidden">
-                    <img src={service.img} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                  </div>
-                ) : (
-                  <div className="h-48 bg-zinc-900 flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
-                     <Pickaxe className="h-16 w-16 text-white/20 group-hover:text-white/40" />
-                  </div>
-                )}
+                <div className="h-48 overflow-hidden">
+                  <img src={service.img} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
                 <div className="p-8">
                   <h4 className="text-xl font-bold font-heading text-foreground mb-3 group-hover:text-primary transition-colors">{service.title}</h4>
                   <p className="text-muted-foreground mb-6 text-sm leading-relaxed">{service.desc}</p>
-                  <Link href="/services">
+                  <Link href={service.link}>
                     <a className="inline-flex items-center text-sm font-bold text-primary hover:text-primary/80 uppercase tracking-wide">
                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
@@ -169,12 +172,16 @@ export default function Home() {
             Whether you need exploration services, machinery, or consultancy, EMRL is your trusted partner for success.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-primary hover:bg-gray-100 font-bold text-base px-10 h-14 shadow-xl border-0">
-              Request a Quote
-            </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 font-bold text-base px-10 h-14">
-              Partner With Us
-            </Button>
+            <Link href="/contact">
+              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 font-bold text-base px-10 h-14 shadow-xl border-0">
+                Request a Quote
+              </Button>
+            </Link>
+            <Link href="/membership">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 font-bold text-base px-10 h-14">
+                Join Our Network
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

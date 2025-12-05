@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Twitter, Linkedin, Instagram, MapPin, Phone, Mail, ChevronRight } from "lucide-react";
+import logo from "@assets/Eminent_logo_1764977694835.jpeg";
 
 export function Footer() {
   return (
@@ -9,10 +10,8 @@ export function Footer() {
           
           {/* Brand Column */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="h-8 w-8 bg-primary rounded-sm flex items-center justify-center text-white font-bold text-lg">
-                E
-              </div>
+            <div className="flex items-center gap-3 mb-6">
+              <img src={logo} alt="EMRL Logo" className="h-10 w-auto bg-white rounded-sm p-0.5" />
               <span className="font-heading font-bold text-xl tracking-tight">EMRL</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -47,7 +46,7 @@ export function Footer() {
           <div>
             <h3 className="font-heading font-bold text-lg mb-6 text-primary">Quick Links</h3>
             <ul className="space-y-3 text-sm text-gray-400">
-              {["About Company", "Our Projects", "Management Team", "Investor Relations", "Careers", "Contact Us"].map((item) => (
+              {["About Company", "Our Projects", "Membership", "Equipment", "Laboratory", "Contact Us"].map((item) => (
                 <li key={item}>
                   <Link href="/about">
                     <a className="hover:text-white transition-colors flex items-center gap-2">

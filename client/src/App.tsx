@@ -8,6 +8,11 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Services from "@/pages/Services";
 import Contact from "@/pages/Contact";
+import Projects from "@/pages/Projects";
+import SchoolOfMines from "@/pages/SchoolOfMines";
+import Membership from "@/pages/Membership";
+import Equipment from "@/pages/Equipment";
+import Laboratory from "@/pages/Laboratory";
 
 function Router() {
   return (
@@ -16,8 +21,11 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/services" component={Services} />
       <Route path="/contact" component={Contact} />
-      <Route path="/projects" component={Services} /> {/* Placeholder route */}
-      <Route path="/school" component={Services} /> {/* Placeholder route */}
+      <Route path="/projects" component={Projects} />
+      <Route path="/school" component={SchoolOfMines} />
+      <Route path="/membership" component={Membership} />
+      <Route path="/equipment" component={Equipment} />
+      <Route path="/laboratory" component={Laboratory} />
       <Route component={NotFound} />
     </Switch>
   );

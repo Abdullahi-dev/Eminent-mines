@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import logo from "@assets/Eminent_logo_1764977694835.jpeg";
+import logo from "@assets/eminent_logo_mining_colors_1764979052205.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,14 +34,10 @@ export function Navbar() {
       </div>
 
       {/* Main Nav */}
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/">
-          <a className="flex items-center gap-3 group">
-            <img src={logo} alt="EMRL Logo" className="h-12 w-auto object-contain" />
-            <div className="hidden sm:flex flex-col">
-              <span className="font-heading font-bold text-xl tracking-tight text-foreground leading-none">EMRL</span>
-              <span className="text-[10px] text-muted-foreground tracking-wider uppercase font-medium">Eminent Mines Resources</span>
-            </div>
+          <a className="flex items-center gap-2 group">
+            <img src={logo} alt="EMRL Logo" className="h-14 w-auto object-contain" />
           </a>
         </Link>
 

@@ -2,7 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, GraduationCap, BookOpen, Award } from "lucide-react";
-import schoolImage from "@assets/generated_images/school_of_mines_students_learning.png";
+import schoolImage from "@assets/generated_images/nigerian_mining_students_in_lab.png";
 
 export default function SchoolOfMines() {
   return (

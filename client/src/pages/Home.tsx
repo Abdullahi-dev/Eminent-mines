@@ -6,8 +6,8 @@ import heroImage from "@assets/generated_images/cinematic_modern_mining_site_her
 import explorationImage from "@assets/generated_images/geologists_examining_rock_samples.png";
 import machineryImage from "@assets/generated_images/heavy_mining_machinery_fleet.png";
 import tradingImage from "@assets/generated_images/raw_minerals_pile_close_up.png";
-import consultancyImage from "@assets/generated_images/mining_consultancy_professionals_meeting.png";
-import schoolImage from "@assets/generated_images/school_of_mines_students_learning.png";
+import consultancyImage from "@assets/generated_images/nigerian_mining_consultants_in_boardroom.png";
+import schoolImage from "@assets/generated_images/nigerian_mining_students_in_lab.png";
 import { Link } from "wouter";
 import { Typewriter } from "@/components/ui/typewriter";
 
@@ -84,7 +84,7 @@ export default function Home() {
                 </h3>
               </div>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                EMRL is more than a mining company; we are a strategic partner in Nigeria’s natural resources sector. We combine geological expertise with modern technology to deliver safe, efficient, and profitable mining operations.
+                EMRL is more than a mining company; we are a strategic partner in Nigeria's natural resources sector. We combine geological expertise with modern technology to deliver safe, efficient, and profitable mining operations.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -140,7 +140,7 @@ export default function Home() {
               { title: "Mining & Exploration", desc: "Full-scale site development, pit optimization, and mineral extraction.", img: heroImage, link: "/services" },
               { title: "Mineral Trading", desc: "Sourcing and exporting high-purity Lead, Zinc, Lithium, and Gold.", img: tradingImage, link: "/services" },
               { title: "Equipment Leasing", desc: "Heavy-duty excavators, crushers, and drilling rigs for rent.", img: machineryImage, link: "/equipment" },
-              { title: "Water Engineering", desc: "Borehole drilling, hydrological surveys, and water treatment.", img: explorationImage, link: "/services" }, // Reusing exploration image for now
+              { title: "Water Engineering", desc: "Borehole drilling, hydrological surveys, and water treatment.", img: explorationImage, link: "/services" },
               { title: "Mining Consultancy", desc: "Regulatory compliance, licensing, and feasibility studies.", img: consultancyImage, link: "/services" },
               { title: "School of Mines", desc: "Professional training and certification for the next generation.", img: schoolImage, link: "/school" },
             ].map((service, i) => (

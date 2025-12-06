@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Twitter, Linkedin, Instagram, MapPin, Phone, Mail, ChevronRight } from "lucide-react";
-import logo from "@assets/Eminent_logo_1764977694835.jpeg";
+import logo from "@assets/eminent_logo_mining_colors_1764979052205.png";
 
 export function Footer() {
   return (
@@ -10,9 +10,8 @@ export function Footer() {
           
           {/* Brand Column */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="EMRL Logo" className="h-10 w-auto bg-white rounded-sm p-0.5" />
-              <span className="font-heading font-bold text-xl tracking-tight">EMRL</span>
+            <div className="mb-6">
+              <img src={logo} alt="EMRL Logo" className="h-20 w-auto object-contain" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Eminent Mines Resources Limited is a leading Nigerian mining company dedicated to sustainable exploration, mineral trading, and technological advancement in the mining sector.

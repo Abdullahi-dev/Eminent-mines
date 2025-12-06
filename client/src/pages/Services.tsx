@@ -1,8 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Services() {
   const services = [
@@ -10,6 +9,7 @@ export default function Services() {
       id: "mining",
       title: "Mining & Quarry Operations",
       desc: "We deliver world-class mining and quarrying solutions that meet global standards.",
+      href: "/services/mining-quarry",
       features: [
         "Mining Site Infrastructure Development",
         "Quarry Installation & Management",
@@ -22,6 +22,7 @@ export default function Services() {
       id: "geo",
       title: "Geological & Exploration",
       desc: "Advanced geoscience solutions to discover and quantify mineral resources.",
+      href: "/services/geological-exploration",
       features: [
         "Field Mapping & Survey",
         "Mineral Sampling & Lab Analysis",
@@ -33,6 +34,7 @@ export default function Services() {
       id: "water",
       title: "Water Exploration & Engineering",
       desc: "Reliable water solutions for communities, industries, and government bodies.",
+      href: "/services/water-engineering",
       features: [
         "Borehole Drilling",
         "Water Treatment Systems",
@@ -44,6 +46,7 @@ export default function Services() {
       id: "trading",
       title: "Mineral Trading & Supply",
       desc: "Sourcing and export of Nigeria's finest solid minerals.",
+      href: "/services/mineral-trading",
       features: [
         "Export of Lead, Zinc, Lithium, Gold",
         "Bulk Supply for Local Industries",
@@ -55,6 +58,7 @@ export default function Services() {
       id: "machinery",
       title: "Mining Machinery",
       desc: "Fabrication, leasing, and maintenance of heavy mining equipment.",
+      href: "/services/machinery-fabrication",
       features: [
         "Equipment Leasing (Excavators, Rigs)",
         "Fabrication of Crushers & Mills",
@@ -62,13 +66,15 @@ export default function Services() {
       ]
     },
     {
-      id: "school",
-      title: "School of Mines",
-      desc: "Training the next generation of mining professionals.",
+      id: "consultancy",
+      title: "Mining Consultancy",
+      desc: "Strategic support and professional guidance for the mining sector.",
+      href: "/services/consultancy",
       features: [
-        "Safety Certification",
-        "Geological Fieldwork Training",
-        "Mineral Identification Courses"
+        "Regulatory Compliance",
+        "License & Permit Advisory",
+        "Feasibility Studies",
+        "Environmental Impact Support"
       ]
     }
   ];
@@ -101,9 +107,11 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full border-primary/20 hover:bg-primary hover:text-white group-hover:border-primary">
-                  View Details
-                </Button>
+                <Link href={service.href}>
+                  <Button variant="outline" className="w-full border-primary/20 hover:bg-primary hover:text-white group-hover:border-primary">
+                    View Details
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>

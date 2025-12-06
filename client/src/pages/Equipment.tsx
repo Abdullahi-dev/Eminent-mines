@@ -1,8 +1,9 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Truck, Wrench, Calendar } from "lucide-react";
+import { Truck, Wrench, Calendar, AlertCircle } from "lucide-react";
 import fleetImage from "@assets/generated_images/mining_equipment_rental_fleet.png";
+import { BookingForm } from "@/components/forms/BookingForm";
 
 export default function Equipment() {
   return (
@@ -21,32 +22,51 @@ export default function Equipment() {
           <p className="text-xl text-gray-200 max-w-xl">
             High-performance mining equipment for any terrain. Reliable, maintained, and ready to deploy.
           </p>
-          <div className="flex gap-4 mt-8">
-            <Button className="bg-primary text-white font-bold px-8 h-12 hover:bg-primary/90">View Fleet</Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white/10 h-12">Request Rates</Button>
-          </div>
         </div>
       </section>
 
-      {/* Fleet List */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              "Crawler Excavators", "Wheel Loaders", "Bulldozers", "Dump Trucks", "Crushing Plants", "Drilling Rigs"
-            ].map((item, i) => (
-              <div key={i} className="bg-zinc-50 border border-border p-6 rounded-sm hover:border-primary transition-colors group">
-                <div className="h-40 bg-zinc-200 mb-6 flex items-center justify-center rounded-sm">
-                  <Truck className="h-16 w-16 text-zinc-400 group-hover:text-primary transition-colors" />
-                </div>
-                <h3 className="text-xl font-bold font-heading mb-2">{item}</h3>
-                <p className="text-sm text-muted-foreground mb-4">Available for daily, weekly, and monthly rental.</p>
-                <Button variant="link" className="text-primary p-0 h-auto font-bold">Check Availability</Button>
+      <div className="container mx-auto px-4 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          
+          {/* Fleet List */}
+          <div className="space-y-12">
+            <div>
+              <h2 className="text-3xl font-heading font-bold text-foreground mb-8">Our Fleet</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {[
+                  "Crawler Excavators", "Wheel Loaders", "Bulldozers", "Dump Trucks", "Crushing Plants", "Drilling Rigs", "Lowbeds", "Compressors"
+                ].map((item, i) => (
+                  <div key={i} className="bg-zinc-50 border border-border p-6 rounded-sm hover:border-primary transition-colors group">
+                    <div className="h-12 w-12 bg-white mb-4 flex items-center justify-center rounded-sm shadow-sm">
+                      <Truck className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-bold font-heading mb-1">{item}</h3>
+                    <p className="text-xs text-muted-foreground">Daily / Weekly / Monthly</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-sm">
+              <div className="flex gap-4">
+                <AlertCircle className="h-6 w-6 text-blue-600 shrink-0" />
+                <div>
+                  <h4 className="font-bold text-blue-900">Maintenance Guarantee</h4>
+                  <p className="text-sm text-blue-800 mt-1">
+                    All our rentals come with on-site maintenance support. If a machine breaks down, we replace or repair it within 24 hours to minimize downtime.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
+
+          {/* Booking Form */}
+          <div className="lg:sticky lg:top-24 h-fit">
+            <BookingForm />
+          </div>
+
         </div>
-      </section>
+      </div>
 
       <Footer />
     </div>

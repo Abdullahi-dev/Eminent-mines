@@ -14,6 +14,14 @@ import Membership from "@/pages/Membership";
 import Equipment from "@/pages/Equipment";
 import Laboratory from "@/pages/Laboratory";
 
+// Service Detail Pages
+import MiningQuarry from "@/pages/services/MiningQuarry";
+import GeologicalExploration from "@/pages/services/GeologicalExploration";
+import WaterEngineering from "@/pages/services/WaterEngineering";
+import MineralTrading from "@/pages/services/MineralTrading";
+import MiningMachinery from "@/pages/services/MiningMachinery";
+import MiningConsultancy from "@/pages/services/MiningConsultancy";
+
 function Router() {
   return (
     <Switch>
@@ -26,6 +34,15 @@ function Router() {
       <Route path="/membership" component={Membership} />
       <Route path="/equipment" component={Equipment} />
       <Route path="/laboratory" component={Laboratory} />
+      
+      {/* Service Detail Routes */}
+      <Route path="/services/mining-quarry" component={MiningQuarry} />
+      <Route path="/services/geological-exploration" component={GeologicalExploration} />
+      <Route path="/services/water-engineering" component={WaterEngineering} />
+      <Route path="/services/mineral-trading" component={MineralTrading} />
+      <Route path="/services/machinery-fabrication" component={MiningMachinery} />
+      <Route path="/services/consultancy" component={MiningConsultancy} />
+      
       <Route component={NotFound} />
     </Switch>
   );

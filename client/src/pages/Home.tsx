@@ -10,6 +10,7 @@ import consultancyImage from "@assets/generated_images/nigerian_mining_consultan
 import schoolImage from "@assets/generated_images/nigerian_mining_students_in_lab.png";
 import { Link } from "wouter";
 import { Typewriter } from "@/components/ui/typewriter";
+import { CEOMessage } from "@/components/home/CEOMessage";
 
 export default function Home() {
   return (
@@ -137,11 +138,11 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Mining & Exploration", desc: "Full-scale site development, pit optimization, and mineral extraction.", img: heroImage, link: "/services" },
-              { title: "Mineral Trading", desc: "Sourcing and exporting high-purity Lead, Zinc, Lithium, and Gold.", img: tradingImage, link: "/services" },
-              { title: "Equipment Leasing", desc: "Heavy-duty excavators, crushers, and drilling rigs for rent.", img: machineryImage, link: "/equipment" },
-              { title: "Water Engineering", desc: "Borehole drilling, hydrological surveys, and water treatment.", img: explorationImage, link: "/services" },
-              { title: "Mining Consultancy", desc: "Regulatory compliance, licensing, and feasibility studies.", img: consultancyImage, link: "/services" },
+              { title: "Mining & Exploration", desc: "Full-scale site development, pit optimization, and mineral extraction.", img: heroImage, link: "/services/mining-quarry" },
+              { title: "Mineral Trading", desc: "Sourcing and exporting high-purity Lead, Zinc, Lithium, and Gold.", img: tradingImage, link: "/services/mineral-trading" },
+              { title: "Equipment Leasing", desc: "Heavy-duty excavators, crushers, and drilling rigs for rent.", img: machineryImage, link: "/services/machinery-fabrication" },
+              { title: "Water Engineering", desc: "Borehole drilling, hydrological surveys, and water treatment.", img: explorationImage, link: "/services/water-engineering" },
+              { title: "Mining Consultancy", desc: "Regulatory compliance, licensing, and feasibility studies.", img: consultancyImage, link: "/services/consultancy" },
               { title: "School of Mines", desc: "Professional training and certification for the next generation.", img: schoolImage, link: "/school" },
             ].map((service, i) => (
               <div key={i} className="group bg-white rounded-sm border border-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -162,6 +163,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* CEO Message Section */}
+      <CEOMessage />
 
       {/* CTA Strip */}
       <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">

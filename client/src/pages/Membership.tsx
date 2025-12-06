@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Users, CreditCard, FileText } from "lucide-react";
+import { RegistrationForm } from "@/components/forms/RegistrationForm";
 
 export default function Membership() {
   return (
@@ -17,27 +18,54 @@ export default function Membership() {
 
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Membership Tiers */}
-            {[
-              { name: "Student Member", price: "₦5,000", period: "/ year", features: ["Access to online library", "Mentorship programs", "Discounted training"] },
-              { name: "Professional Member", price: "₦25,000", period: "/ year", features: ["Networking events", "Professional certification", "Industry reports", "Voting rights"] },
-              { name: "Corporate Member", price: "₦150,000", period: "/ year", features: ["Company listing", "Exhibition discounts", "Staff training access", "Policy advocacy"] }
-            ].map((tier, i) => (
-              <div key={i} className="bg-white p-8 rounded-sm shadow-md border border-border flex flex-col">
-                <h3 className="text-2xl font-bold font-heading mb-2">{tier.name}</h3>
-                <div className="text-3xl font-bold text-primary mb-6">{tier.price} <span className="text-sm text-gray-400 font-normal">{tier.period}</span></div>
-                <ul className="space-y-4 mb-8 flex-1">
-                  {tier.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-3 text-sm text-gray-600">
-                      <CheckCircle2 className="h-4 w-4 text-primary" /> {feature}
-                    </li>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Content */}
+            <div className="space-y-12">
+               {/* Membership Tiers */}
+               <div>
+                <h2 className="text-2xl font-heading font-bold mb-8">Membership Tiers</h2>
+                <div className="space-y-6">
+                  {[
+                    { name: "Student Member", price: "₦5,000", period: "/ year", features: ["Access to online library", "Mentorship programs", "Discounted training"] },
+                    { name: "Professional Member", price: "₦25,000", period: "/ year", features: ["Networking events", "Professional certification", "Industry reports", "Voting rights"] },
+                    { name: "Corporate Member", price: "₦150,000", period: "/ year", features: ["Company listing", "Exhibition discounts", "Staff training access", "Policy advocacy"] }
+                  ].map((tier, i) => (
+                    <div key={i} className="bg-white p-6 rounded-sm shadow-sm border border-border hover:border-primary transition-colors">
+                      <div className="flex justify-between items-start mb-4">
+                        <h3 className="text-xl font-bold font-heading">{tier.name}</h3>
+                        <div className="text-right">
+                          <span className="text-xl font-bold text-primary block">{tier.price}</span>
+                          <span className="text-xs text-gray-400">{tier.period}</span>
+                        </div>
+                      </div>
+                      <ul className="space-y-2">
+                        {tier.features.map((feature, j) => (
+                          <li key={j} className="flex items-center gap-3 text-sm text-gray-600">
+                            <CheckCircle2 className="h-4 w-4 text-primary shrink-0" /> {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
-                <Button className="w-full bg-zinc-900 text-white hover:bg-zinc-800">Join Now</Button>
+                </div>
               </div>
-            ))}
+
+              <div className="bg-white p-8 rounded-sm border border-border">
+                <h3 className="font-bold font-heading text-xl mb-4">Member Benefits</h3>
+                <p className="text-muted-foreground mb-6">
+                  As a member of the EMRL Professional Body, you gain access to exclusive resources, networking opportunities, and professional development tools designed to advance your career in the mining sector.
+                </p>
+                <Button variant="outline">Download Member Handbook</Button>
+              </div>
+            </div>
+
+            {/* Registration Form */}
+            <div className="lg:sticky lg:top-24 h-fit">
+              <RegistrationForm />
+            </div>
           </div>
+
         </div>
       </section>
 

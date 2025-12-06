@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Calendar, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle2, Calendar, MapPin, Download } from "lucide-react";
 import projectImage from "@assets/generated_images/mining_project_site_overview.png";
 
 export default function Projects() {
@@ -70,11 +70,17 @@ export default function Projects() {
                     </div>
                   </div>
                   <p className="text-muted-foreground mb-6">{project.desc}</p>
-                  <div className="flex items-center gap-6 text-sm text-gray-500 border-t border-border pt-4">
+                  <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 border-t border-border pt-4">
                     <span className="flex items-center gap-2"><MapPin className="h-4 w-4" /> {project.location}</span>
-                    <Button variant="link" className="ml-auto text-primary font-bold p-0 h-auto">
-                      View Case Study <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    
+                    <div className="ml-auto flex gap-2">
+                       <Button variant="outline" size="sm" className="h-8 gap-2 text-xs">
+                         <Download className="h-3 w-3" /> Case Study
+                       </Button>
+                       <Button variant="link" className="text-primary font-bold p-0 h-auto">
+                        View Details <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>

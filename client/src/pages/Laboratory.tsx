@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { FlaskConical, Microscope, FileSearch } from "lucide-react";
+import { FlaskConical, Microscope, FileSearch, CheckCircle2 } from "lucide-react";
 import labImage from "@assets/generated_images/mineral_testing_laboratory.png";
 
 export default function Laboratory() {
@@ -22,7 +22,7 @@ export default function Laboratory() {
 
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
             {[
               { icon: Microscope, title: "Mineral Identification", desc: "Precise identification of ore composition and mineral content using XRF and XRD analysis." },
               { icon: FlaskConical, title: "Geochemical Analysis", desc: "Testing soil, rock, and water samples for trace elements and contamination." },
@@ -38,12 +38,39 @@ export default function Laboratory() {
             ))}
           </div>
 
-          <div className="mt-20 bg-zinc-50 p-12 rounded-sm text-center">
+          {/* Testing Categories */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+             <div className="space-y-6">
+                <h2 className="text-3xl font-heading font-bold text-foreground">Comprehensive Testing Capabilities</h2>
+                <p className="text-muted-foreground text-lg">Our state-of-the-art laboratory is equipped to handle a wide range of mineral and environmental testing requirements.</p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    "Gold Fire Assay", "Lithium Ore Analysis", "Heavy Metal Testing", "Water Quality Analysis", 
+                    "Soil Contamination Test", "Specific Gravity Test", "Moisture Content", "Particle Size Analysis"
+                  ].map((test, i) => (
+                    <div key={i} className="flex items-center gap-3 p-3 bg-zinc-50 rounded-sm border border-border">
+                      <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                      <span className="font-medium">{test}</span>
+                    </div>
+                  ))}
+                </div>
+             </div>
+             <div className="bg-zinc-100 p-8 rounded-sm border-l-4 border-primary">
+                <h3 className="text-xl font-bold font-heading mb-4">Certification & Standards</h3>
+                <p className="text-muted-foreground mb-4">
+                  All our test results are ISO compliant and recognized by major international buyers and regulatory bodies. We adhere to strict quality control protocols to ensure accuracy.
+                </p>
+                <Button variant="outline" className="bg-white w-full">Download Lab Brochure</Button>
+             </div>
+          </div>
+
+          <div className="bg-zinc-900 text-white p-12 rounded-sm text-center">
             <h3 className="text-3xl font-bold font-heading mb-4">Need to test your samples?</h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+            <p className="text-gray-400 max-w-2xl mx-auto mb-8">
               We provide fast turnaround times for all standard mineral tests. Contact us today to schedule a sample submission.
             </p>
-            <Button size="lg" className="bg-primary text-white font-bold">Contact Lab Manager</Button>
+            <Button size="lg" className="bg-primary text-white hover:bg-primary/90 font-bold px-8">Contact Lab Manager</Button>
           </div>
         </div>
       </section>

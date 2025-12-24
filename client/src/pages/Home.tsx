@@ -9,7 +9,7 @@ import tradingImage from "@assets/generated_images/raw_minerals_pile_close_up.pn
 import consultancyImage from "@assets/generated_images/nigerian_mining_consultants_in_boardroom.png";
 import schoolImage from "@assets/generated_images/nigerian_mining_students_in_lab.png";
 import waterImage from "@assets/generated_images/water_engineering_borehole_drilling.png";
-import explosivesImage from "@assets/generated_images/cinematic_modern_mining_site_hero_background.png";
+import explosivesImage from "@assets/image_1766576190332.png";
 import { Link } from "wouter";
 import { Typewriter } from "@/components/ui/typewriter";
 import { CEOMessage } from "@/components/home/CEOMessage";
@@ -146,7 +146,7 @@ export default function Home() {
               { title: "Water Engineering", desc: "Borehole drilling, hydrological surveys, and water treatment.", img: waterImage, link: "/services/water-engineering" },
               { title: "Mining Consultancy", desc: "Regulatory compliance, licensing, and feasibility studies.", img: consultancyImage, link: "/services/consultancy" },
               { title: "School of Mines", desc: "Professional training and certification for the next generation.", img: schoolImage, link: "/school" },
-              { title: "Explosives Management", desc: "Secure storage, handling, and supply of mining explosives and blasting materials.", img: explosivesImage, link: "/services/explosives-management" },
+              { title: "Explosives Management & Mining Magazine Services", desc: "Secure storage, handling, and supply of mining explosives and blasting materials.", img: explosivesImage, link: "/services/explosives-management" },
             ].map((service, i) => (
               <div key={i} className="group bg-white rounded-sm border border-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div className="h-48 overflow-hidden">

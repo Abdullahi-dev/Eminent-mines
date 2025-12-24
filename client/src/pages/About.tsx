@@ -1,7 +1,8 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CheckCircle2 } from "lucide-react";
-import ceoImage from "@assets/Engr._Jamiu_Rasheed_odofin_Founder_CEO_1764980188188.png";
+import ceoImage from "@assets/Engr._Jamiu_Rasheed_odofin_Founder_CEO_1766575975601.jpeg";
+import cfImage from "@assets/Dr_Isiak_Adeyemi_Alabi.._founder_CFO-_1766575982689.png";
 import ctoImage from "@assets/Mr._Abdullahi_Mahmud_Co-founder_CTOBR&D_1766574911792.png";
 import csoImage1 from "@assets/Engr._Ola_Rokeeb_Co-founder_CSO_(2)_1766574916972.png";
 import cmoImage from "@assets/Engr._Abdulmujeeb_Ramadan_Sodiq_Co-founder_CMO-_1766574924512.png";
@@ -12,46 +13,60 @@ import csoImage2 from "@assets/Engr._Abdulsalam_Abdulrahman_Adeshina_Co-founder_
 export default function About() {
   const teamMembers = [
     {
+      name: "Engr. Jamiu Rasheed Odofin",
+      title: "Founder, Chief Executive Officer",
+      role: "CEO",
+      image: ceoImage,
+      bio: "Visionary founder and strategic leader driving EMRL's expansion across Nigeria's mining sector."
+    },
+    {
+      name: "Dr. Isiak Adeyemi Alabi",
+      title: "Founder, Chief Financial Officer",
+      role: "CFO",
+      image: cfImage,
+      bio: "Financial steward ensuring sound fiscal management and sustainable business growth."
+    },
+    {
       name: "Engr. Ibrahim Magagi Abdulbaki",
       title: "Founder, Chief Operating Officer",
       role: "COO",
       image: cooImage,
-      bio: "Visionary leader driving operational excellence and strategic execution across all divisions."
+      bio: "Operational excellence leader driving efficiency and execution across all divisions."
     },
     {
       name: "Mr. Abdullahi Mahmud",
       title: "Co-founder, Chief Technology Officer",
       role: "CTO/BR&D",
       image: ctoImage,
-      bio: "Technology innovator advancing mining solutions through modern geospatial and digital systems."
+      bio: "Technology innovator advancing mining solutions through modern geospatial systems."
     },
     {
       name: "Engr. Ola Rokeeb",
       title: "Co-founder, Chief Sustainability Officer",
       role: "CSO",
       image: csoImage1,
-      bio: "Environmental steward ensuring sustainable and responsible mining practices company-wide."
+      bio: "Environmental steward ensuring sustainable and responsible mining practices."
     },
     {
       name: "Engr. Abdulmujeeb Ramadan Sodiq",
       title: "Co-founder, Chief Marketing Officer",
       role: "CMO",
       image: cmoImage,
-      bio: "Strategic marketer building EMRL's presence in Nigerian and international mining markets."
+      bio: "Strategic marketer building EMRL's presence in Nigerian and international markets."
     },
     {
       name: "Mallam Abdulazeez Isa",
       title: "Co-founder, Chief Legal Officer",
       role: "CLO",
       image: cloImage,
-      bio: "Legal expert ensuring regulatory compliance and protecting company interests in all operations."
+      bio: "Legal expert ensuring regulatory compliance and protecting company interests."
     },
     {
       name: "Engr. Abdulsalam Abdulrahman Adeshina",
       title: "Co-founder, Chief Safety Officer",
       role: "CSO",
       image: csoImage2,
-      bio: "Safety champion maintaining zero-harm culture and leading occupational health initiatives."
+      bio: "Safety champion maintaining zero-harm culture and occupational health initiatives."
     }
   ];
 
@@ -105,20 +120,20 @@ export default function About() {
             <p className="text-muted-foreground text-lg">Experienced professionals dedicated to advancing Nigeria's mining sector with integrity, innovation, and excellence.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, i) => (
               <div key={i} className="bg-white rounded-sm shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="h-64 overflow-hidden bg-zinc-200">
+                <div className="h-80 overflow-hidden bg-zinc-200">
                   <img 
                     src={member.image} 
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-bold font-heading text-foreground mb-1">{member.name}</h4>
-                  <p className="text-sm text-primary font-bold uppercase tracking-widest mb-3">{member.title}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
+                  <h4 className="text-base font-bold font-heading text-foreground mb-1 line-clamp-2">{member.name}</h4>
+                  <p className="text-xs text-primary font-bold uppercase tracking-widest mb-3">{member.title}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">{member.bio}</p>
                 </div>
               </div>
             ))}

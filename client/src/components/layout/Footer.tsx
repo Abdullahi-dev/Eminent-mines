@@ -1,8 +1,17 @@
 import { Link } from "wouter";
-import { Facebook, Twitter, Linkedin, Instagram, MapPin, Phone, Mail, ChevronRight } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, MapPin, Phone, Mail, ChevronRight, Youtube, Music } from "lucide-react";
 import logo from "@assets/eminent_logo_mining_colors_1764979052205.png";
 
 export function Footer() {
+  const socialLinks = [
+    { Icon: Facebook, href: "https://web.facebook.com/profile.php?id=100084362835491", label: "Facebook" },
+    { Icon: Twitter, href: "https://x.com/Eminentmines", label: "Twitter" },
+    { Icon: Instagram, href: "https://www.instagram.com/eminentmines/", label: "Instagram" },
+    { Icon: Youtube, href: "https://www.youtube.com/@EminentMines", label: "YouTube" },
+    { Icon: Music, href: "https://www.tiktok.com/@eminentmines", label: "TikTok" },
+    { Icon: Linkedin, href: "https://linkedin.com/company/eminentmines", label: "LinkedIn" },
+  ];
+
   return (
     <footer className="bg-[#1B1B1B] text-white pt-16 pb-8 border-t-4 border-primary">
       <div className="container mx-auto px-4">
@@ -16,9 +25,16 @@ export function Footer() {
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Eminent Mines Resources Limited is a leading Nigerian mining company dedicated to sustainable exploration, mineral trading, and technological advancement in the mining sector.
             </p>
-            <div className="flex space-x-4">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                <a key={i} href="#" className="bg-white/10 p-2 rounded-full hover:bg-primary hover:text-white transition-colors text-gray-300">
+            <div className="flex space-x-3">
+              {socialLinks.map(({ Icon, href, label }) => (
+                <a 
+                  key={label}
+                  href={href} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={label}
+                  className="bg-white/10 p-2 rounded-full hover:bg-primary hover:text-white transition-colors text-gray-300"
+                >
                   <Icon className="h-4 w-4" />
                 </a>
               ))}

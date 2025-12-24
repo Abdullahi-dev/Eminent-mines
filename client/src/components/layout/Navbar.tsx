@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail, Facebook, Twitter, Instagram, Youtube, Music, Linkedin } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import logo from "@assets/eminent_logo_mining_colors_1764979052205.png";
@@ -20,15 +20,39 @@ export function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
+  const socialLinks = [
+    { Icon: Facebook, href: "https://web.facebook.com/profile.php?id=100084362835491", label: "Facebook" },
+    { Icon: Twitter, href: "https://x.com/Eminentmines", label: "Twitter" },
+    { Icon: Instagram, href: "https://www.instagram.com/eminentmines/", label: "Instagram" },
+    { Icon: Youtube, href: "https://www.youtube.com/@EminentMines", label: "YouTube" },
+    { Icon: Music, href: "https://www.tiktok.com/@eminentmines", label: "TikTok" },
+    { Icon: Linkedin, href: "https://linkedin.com/company/eminentmines", label: "LinkedIn" },
+  ];
+
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
       {/* Top Bar */}
-      <div className="bg-primary text-primary-foreground py-2 px-4 text-xs font-medium">
+      <div className="bg-primary text-primary-foreground py-3 px-4 text-xs font-medium">
         <div className="container mx-auto flex justify-between items-center">
           <p className="hidden lg:block">Leading Nigeria's Mining & Natural Resources Sector</p>
-          <div className="flex space-x-6 w-full lg:w-auto justify-between lg:justify-end">
+          <div className="flex items-center gap-6 w-full lg:w-auto justify-between lg:justify-end flex-wrap">
             <span className="flex items-center gap-2"><Phone className="h-3 w-3" /> +234 800 EMRL MINES</span>
             <span className="flex items-center gap-2"><Mail className="h-3 w-3" /> info@emrl.com</span>
+            {/* Social Links */}
+            <div className="flex gap-2">
+              {socialLinks.map(({ Icon, href, label }) => (
+                <a 
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={label}
+                  className="hover:opacity-75 transition-opacity"
+                >
+                  <Icon className="h-3.5 w-3.5" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

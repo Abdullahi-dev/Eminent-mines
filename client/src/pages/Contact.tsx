@@ -64,17 +64,17 @@ export default function Contact() {
                 <h4 className="text-xl font-bold font-heading mb-6 text-primary">Contact Information</h4>
                 <div className="space-y-6">
                   <div className="flex gap-4">
-                    <MapPin className="text-primary h-6 w-6 shrink-0" />
+                    <MapPin className="text-primary h-6 w-6 shrink-0 mt-0.5" />
                     <div>
                       <p className="font-bold mb-1">Head Office</p>
-                      <p className="text-gray-400 text-sm">Plot 45, Mining District,<br />Abuja, Nigeria.</p>
+                      <p className="text-gray-400 text-sm">1st Floor UBA Building,<br />Poly Road, Tudunwada,<br />Kaduna, Nigeria.</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    <Phone className="text-primary h-6 w-6 shrink-0" />
+                    <Phone className="text-primary h-6 w-6 shrink-0 mt-0.5" />
                     <div>
                       <p className="font-bold mb-1">Phone</p>
-                      <p className="text-gray-400 text-sm">+234 800 EMRL MINES<br />+234 700 123 4567</p>
+                      <p className="text-gray-400 text-sm">+234 907 692 9317<br />+234 906 726 3066<br />+234 706 255 5819</p>
                     </div>
                   </div>
                   <div className="flex gap-4">

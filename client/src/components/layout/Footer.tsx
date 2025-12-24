@@ -25,6 +25,7 @@ export function Footer() {
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Eminent Mines Resources Limited is a leading Nigerian mining company dedicated to sustainable exploration, mineral trading, and technological advancement in the mining sector.
             </p>
+            <p className="text-primary font-bold italic text-sm mb-6">If it can't be grown; it has to be mined!!!</p>
             <div className="flex space-x-3">
               {socialLinks.map(({ Icon, href, label }) => (
                 <a 
@@ -80,13 +81,18 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <span>
-                  Plot 45, Mining District,<br />
-                  Abuja, Nigeria.
+                  1st Floor UBA Building,<br />
+                  Poly Road, Tudunwada,<br />
+                  Kaduna, Nigeria.
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span>+234 800 EMRL MINES</span>
+              <li className="flex items-start gap-3">
+                <Phone className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>
+                  +234 907 692 9317<br />
+                  +234 906 726 3066<br />
+                  +234 706 255 5819
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />

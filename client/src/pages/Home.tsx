@@ -8,6 +8,8 @@ import machineryImage from "@assets/generated_images/heavy_mining_machinery_flee
 import tradingImage from "@assets/generated_images/raw_minerals_pile_close_up.png";
 import consultancyImage from "@assets/generated_images/nigerian_mining_consultants_in_boardroom.png";
 import schoolImage from "@assets/generated_images/nigerian_mining_students_in_lab.png";
+import waterImage from "@assets/generated_images/water_engineering_borehole_drilling.png";
+import explosivesImage from "@assets/generated_images/cinematic_modern_mining_site_hero_background.png";
 import { Link } from "wouter";
 import { Typewriter } from "@/components/ui/typewriter";
 import { CEOMessage } from "@/components/home/CEOMessage";
@@ -141,9 +143,10 @@ export default function Home() {
               { title: "Mining & Exploration", desc: "Full-scale site development, pit optimization, and mineral extraction.", img: heroImage, link: "/services/mining-quarry" },
               { title: "Mineral Trading", desc: "Sourcing and exporting high-purity Lead, Zinc, Lithium, and Gold.", img: tradingImage, link: "/services/mineral-trading" },
               { title: "Equipment Leasing", desc: "Heavy-duty excavators, crushers, and drilling rigs for rent.", img: machineryImage, link: "/services/machinery-fabrication" },
-              { title: "Water Engineering", desc: "Borehole drilling, hydrological surveys, and water treatment.", img: explorationImage, link: "/services/water-engineering" },
+              { title: "Water Engineering", desc: "Borehole drilling, hydrological surveys, and water treatment.", img: waterImage, link: "/services/water-engineering" },
               { title: "Mining Consultancy", desc: "Regulatory compliance, licensing, and feasibility studies.", img: consultancyImage, link: "/services/consultancy" },
               { title: "School of Mines", desc: "Professional training and certification for the next generation.", img: schoolImage, link: "/school" },
+              { title: "Explosives Management", desc: "Secure storage, handling, and supply of mining explosives and blasting materials.", img: explosivesImage, link: "/services/explosives-management" },
             ].map((service, i) => (
               <div key={i} className="group bg-white rounded-sm border border-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div className="h-48 overflow-hidden">
@@ -154,7 +157,7 @@ export default function Home() {
                   <p className="text-muted-foreground mb-6 text-sm leading-relaxed">{service.desc}</p>
                   <Link href={service.link}>
                     <a className="inline-flex items-center text-sm font-bold text-primary hover:text-primary/80 uppercase tracking-wide">
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                      View Details <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Link>
                 </div>
@@ -177,13 +180,13 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 font-bold text-base px-10 h-14 shadow-xl border-0">
-                Request a Quote
+              <Button className="bg-white text-primary hover:bg-white/90 font-bold text-base px-8 h-12 w-full sm:w-auto">
+                Get Started Today
               </Button>
             </Link>
-            <Link href="/membership">
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 font-bold text-base px-10 h-14">
-                Join Our Network
+            <Link href="/about">
+              <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 font-bold text-base px-8 h-12 backdrop-blur-sm w-full sm:w-auto">
+                Learn More
               </Button>
             </Link>
           </div>

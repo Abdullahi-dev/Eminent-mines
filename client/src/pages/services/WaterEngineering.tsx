@@ -1,5 +1,5 @@
 import { ServiceLayout } from "@/components/layout/ServiceLayout";
-import heroImage from "@assets/generated_images/water_borehole_drilling_operation.png";
+import heroImage from "@assets/generated_images/water_engineering_borehole_drilling.png";
 
 export default function WaterEngineering() {
   return (

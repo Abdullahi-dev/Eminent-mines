@@ -21,6 +21,7 @@ import WaterEngineering from "@/pages/services/WaterEngineering";
 import MineralTrading from "@/pages/services/MineralTrading";
 import MiningMachinery from "@/pages/services/MiningMachinery";
 import MiningConsultancy from "@/pages/services/MiningConsultancy";
+import ExplosivesManagement from "@/pages/services/ExplosivesManagement";
 
 function Router() {
   return (
@@ -42,6 +43,7 @@ function Router() {
       <Route path="/services/mineral-trading" component={MineralTrading} />
       <Route path="/services/machinery-fabrication" component={MiningMachinery} />
       <Route path="/services/consultancy" component={MiningConsultancy} />
+      <Route path="/services/explosives-management" component={ExplosivesManagement} />
       
       <Route component={NotFound} />
     </Switch>

@@ -44,7 +44,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />
         
-        <div className="relative container mx-auto px-4 z-10 pt-20 pb-48 lg:pb-32">
+        <div className="relative container mx-auto px-4 z-10 pt-20 pb-32 lg:pb-32">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -59,25 +59,25 @@ export default function Home() {
               Leading Nigeria's Mining Evolution
             </div>
             
-            <h1 className="text-5xl md:text-8xl font-heading font-black text-white leading-[1.1] tracking-tight">
+            <h1 className="text-4xl md:text-8xl font-heading font-black text-white leading-[1.1] tracking-tight">
               Unearthing <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-400 to-primary-foreground animate-gradient-x">
                 <Typewriter words={["Global Value", "Sustainable Wealth", "Mineral Assets", "Future Growth"]} />
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-300 max-w-2xl leading-relaxed font-medium">
+            <p className="text-lg md:text-2xl text-gray-300 max-w-2xl leading-relaxed font-medium">
               Eminent Mines Resources Limited integrates advanced geological science with indigenous expertise to deliver world-class mineral solutions across the African continent.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 pt-6">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-6">
               <Link href="/services">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-lg px-10 h-16 rounded-sm shadow-xl hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 group">
-                  Explore Solutions <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-lg px-8 sm:px-10 h-14 sm:h-16 rounded-sm shadow-xl hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 group">
+                  Explore Solutions <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 font-bold text-lg px-10 h-16 backdrop-blur-sm rounded-sm hover:-translate-y-1 transition-all duration-300">
+                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 font-bold text-lg px-8 sm:px-10 h-14 sm:h-16 backdrop-blur-sm rounded-sm hover:-translate-y-1 transition-all duration-300">
                   Partner With Us
                 </Button>
               </Link>
@@ -265,21 +265,21 @@ export default function Home() {
       <section className="py-24 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-foreground/10 via-transparent to-transparent opacity-50" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-2xl rounded-[3rem] p-12 md:p-20 text-center border border-white/10 shadow-[0_50px_100px_rgba(0,0,0,0.3)]">
-            <h2 className="text-4xl md:text-6xl font-heading font-black mb-8 text-white leading-tight">
+          <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-2xl rounded-[2rem] md:rounded-[3rem] p-8 md:p-20 text-center border border-white/10 shadow-[0_50px_100px_rgba(0,0,0,0.3)]">
+            <h2 className="text-3xl md:text-6xl font-heading font-black mb-8 text-white leading-tight">
               Let's Build the Future <br /> of Nigerian Mining together.
             </h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12 font-medium">
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 font-medium">
               Join a network of global investors and industry leaders partnering with EMRL to drive sustainable growth.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
               <Link href="/contact">
-                <Button className="bg-white text-primary hover:bg-zinc-100 font-black text-xl px-12 h-20 rounded-2xl shadow-2xl transition-all hover:scale-105 active:scale-95">
+                <Button className="bg-white text-primary hover:bg-zinc-100 font-black text-lg md:text-xl px-8 md:px-12 h-16 md:h-20 rounded-xl md:rounded-2xl shadow-2xl transition-all hover:scale-105 active:scale-95">
                   Initiate Partnership
                 </Button>
               </Link>
               <Link href="/about">
-                <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 font-black text-xl px-12 h-20 backdrop-blur-sm rounded-2xl transition-all hover:scale-105 active:scale-95">
+                <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 font-black text-lg md:text-xl px-8 md:px-12 h-16 md:h-20 backdrop-blur-sm rounded-xl md:rounded-2xl transition-all hover:scale-105 active:scale-95">
                   Our Corporate Profile
                 </Button>
               </Link>

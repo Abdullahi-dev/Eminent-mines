@@ -187,7 +187,7 @@ export default function Home() {
                 className="pt-4"
               >
                 <Link href="/about">
-                  <Button variant="outline" className="border-zinc-200 hover:border-primary hover:bg-primary hover:text-white font-bold h-14 px-8 text-base transition-all rounded-xl">
+                  <Button variant="outline" className="border-primary/20 bg-primary text-white hover:bg-[#B8860B] font-bold h-14 px-8 text-base transition-all rounded-xl shadow-lg hover:shadow-primary/20">
                     Meet Our Team <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>

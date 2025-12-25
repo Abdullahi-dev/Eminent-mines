@@ -29,27 +29,28 @@ function Router() {
     <>
       <ScrollToTop />
       <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/services" component={Services} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/projects" component={Projects} />
-      <Route path="/school" component={SchoolOfMines} />
-      <Route path="/membership" component={Membership} />
-      <Route path="/equipment" component={Equipment} />
-      <Route path="/laboratory" component={Laboratory} />
-      
-      {/* Service Detail Routes */}
-      <Route path="/services/mining-quarry" component={MiningQuarry} />
-      <Route path="/services/geological-exploration" component={GeologicalExploration} />
-      <Route path="/services/water-engineering" component={WaterEngineering} />
-      <Route path="/services/mineral-trading" component={MineralTrading} />
-      <Route path="/services/machinery-fabrication" component={MiningMachinery} />
-      <Route path="/services/consultancy" component={MiningConsultancy} />
-      <Route path="/services/explosives-management" component={ExplosivesManagement} />
-      
-      <Route component={NotFound} />
-    </Switch>
+        <Route path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/services" component={Services} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/projects" component={Projects} />
+        <Route path="/school" component={SchoolOfMines} />
+        <Route path="/membership" component={Membership} />
+        <Route path="/equipment" component={Equipment} />
+        <Route path="/laboratory" component={Laboratory} />
+        
+        {/* Service Detail Routes */}
+        <Route path="/services/mining-quarry" component={MiningQuarry} />
+        <Route path="/services/geological-exploration" component={GeologicalExploration} />
+        <Route path="/services/water-engineering" component={WaterEngineering} />
+        <Route path="/services/mineral-trading" component={MineralTrading} />
+        <Route path="/services/machinery-fabrication" component={MiningMachinery} />
+        <Route path="/services/consultancy" component={MiningConsultancy} />
+        <Route path="/services/explosives-management" component={ExplosivesManagement} />
+        
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 

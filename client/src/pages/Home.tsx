@@ -34,7 +34,7 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section - High Impact */}
-      <section className="relative min-h-[90vh] lg:h-screen w-full overflow-hidden bg-black flex items-center pt-24 pb-40 lg:pb-0">
+      <section className="relative min-h-[100vh] w-full overflow-hidden bg-black flex flex-col justify-center">
         <motion.div 
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -44,12 +44,12 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />
         
-        <div className="relative container mx-auto px-4 z-10">
+        <div className="relative container mx-auto px-4 z-10 pt-20 pb-48 lg:pb-32">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-4xl space-y-8 mb-12 lg:mb-20"
+            className="max-w-4xl space-y-8"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/40 backdrop-blur-md text-primary text-sm font-bold uppercase tracking-widest shadow-[0_0_20px_rgba(var(--primary),0.2)]">
               <span className="relative flex h-2 w-2">
@@ -86,7 +86,7 @@ export default function Home() {
         </div>
 
         {/* Dynamic Stats Section */}
-        <div className="absolute bottom-0 w-full bg-black/80 backdrop-blur-xl border-t border-white/10 py-10 z-20">
+        <div className="absolute bottom-0 w-full bg-black/80 backdrop-blur-xl border-t border-white/10 py-8 lg:py-10 z-20">
           <div className="container mx-auto px-4">
             <motion.div 
               variants={staggerContainer}

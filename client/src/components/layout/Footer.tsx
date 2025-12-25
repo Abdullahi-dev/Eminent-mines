@@ -12,6 +12,24 @@ export function Footer() {
     { Icon: Linkedin, href: "https://linkedin.com/company/eminentmines", label: "LinkedIn" },
   ];
 
+  const services = [
+    { name: "Mining & Exploration", href: "/services/mining-quarry" },
+    { name: "Mineral Trading", href: "/services/mineral-trading" },
+    { name: "Water Engineering", href: "/services/water-engineering" },
+    { name: "Consultancy", href: "/services/consultancy" },
+    { name: "Machinery Rentals", href: "/services/machinery-fabrication" },
+    { name: "School of Mines", href: "/school" },
+  ];
+
+  const quickLinks = [
+    { name: "About Company", href: "/about" },
+    { name: "Our Projects", href: "/projects" },
+    { name: "Membership", href: "/membership" },
+    { name: "Equipment", href: "/equipment" },
+    { name: "Laboratory", href: "/laboratory" },
+    { name: "Contact Us", href: "/contact" },
+  ];
+
   return (
     <footer className="bg-[#1B1B1B] text-white pt-16 pb-8 border-t-4 border-primary">
       <div className="container mx-auto px-4">
@@ -46,11 +64,11 @@ export function Footer() {
           <div>
             <h3 className="font-heading font-bold text-lg mb-6 text-primary">Our Services</h3>
             <ul className="space-y-3 text-sm text-gray-400">
-              {["Mining & Exploration", "Mineral Trading", "Water Engineering", "Consultancy", "Machinery Rentals", "School of Mines"].map((item) => (
-                <li key={item}>
-                  <Link href="/services">
+              {services.map((service) => (
+                <li key={service.name}>
+                  <Link href={service.href}>
                     <a className="hover:text-white transition-colors flex items-center gap-2">
-                      <ChevronRight className="h-3 w-3 text-primary" /> {item}
+                      <ChevronRight className="h-3 w-3 text-primary" /> {service.name}
                     </a>
                   </Link>
                 </li>
@@ -62,11 +80,11 @@ export function Footer() {
           <div>
             <h3 className="font-heading font-bold text-lg mb-6 text-primary">Quick Links</h3>
             <ul className="space-y-3 text-sm text-gray-400">
-              {["About Company", "Our Projects", "Membership", "Equipment", "Laboratory", "Contact Us"].map((item) => (
-                <li key={item}>
-                  <Link href="/about">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href}>
                     <a className="hover:text-white transition-colors flex items-center gap-2">
-                      <ChevronRight className="h-3 w-3 text-primary" /> {item}
+                      <ChevronRight className="h-3 w-3 text-primary" /> {link.name}
                     </a>
                   </Link>
                 </li>

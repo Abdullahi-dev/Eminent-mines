@@ -1,13 +1,13 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CheckCircle2 } from "lucide-react";
-import ceoImage from "@assets/Engr._Jamiu_Rasheed_odofin_Founder_CEO_1766575975601.jpeg";
+import ceoImage from "@assets/Engr._Jamiu_Rasheed_odofin_Founder_CEO_1766651126730.jpeg";
 import cfImage from "@assets/Dr_Isiak_Adeyemi_Alabi.._founder_CFO-_1766575982689.png";
 import ctoImage from "@assets/Mr._Abdullahi_Mahmud_Co-founder_CTOBR&D_1766574911792.png";
 import csoImage1 from "@assets/Engr._Ola_Rokeeb_Co-founder_CSO_(2)_1766574916972.png";
 import cmoImage from "@assets/Engr._Abdulmujeeb_Ramadan_Sodiq_Co-founder_CMO-_1766574924512.png";
 import cloImage from "@assets/Mallam_Abdulazeez_Isa_Co-founder_CLO-removebg-preview_1766574935845.png";
-import cooImage from "@assets/Engr_Ibrahim_Magagi_Abdulbaki_Founder_COO-_1766574928762.png";
+import cooImage from "@assets/Engr_Ibrahim_Magagi_Abdulbaki_Founder_COO_1766651146379.jpeg";
 import csoImage2 from "@assets/Engr._Abdulsalam_Abdulrahman_Adeshina_Co-founder_CSO_(2)_1766574946072.png";
 
 export default function About() {

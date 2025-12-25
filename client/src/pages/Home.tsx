@@ -9,7 +9,7 @@ import tradingImage from "@assets/generated_images/raw_minerals_pile_close_up.pn
 import consultancyImage from "@assets/generated_images/nigerian_mining_consultants_in_boardroom.png";
 import schoolImage from "@assets/generated_images/nigerian_mining_students_in_lab.png";
 import waterImage from "@assets/generated_images/water_engineering_borehole_drilling.png";
-import explosivesImage from "@assets/image_1766576190332.png";
+import explosivesImage from "@assets/generated_images/mining_explosives_storage_magazine.png";
 import { Link } from "wouter";
 import { Typewriter } from "@/components/ui/typewriter";
 import { CEOMessage } from "@/components/home/CEOMessage";
@@ -111,7 +111,7 @@ export default function Home() {
 
               <Link href="/about">
                 <Button variant="outline" className="border-foreground/20 hover:bg-foreground hover:text-white font-bold mt-4">
-                  Read CEO's Message
+                  Read Full Bio
                 </Button>
               </Link>
             </div>

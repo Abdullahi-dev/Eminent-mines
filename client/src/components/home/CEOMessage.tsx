@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Quote } from "lucide-react";
-import ceoImage from "@assets/Engr._Jamiu_Rasheed_odofin_Founder_CEO_1764980400320.png";
+import { Link } from "wouter";
+import ceoImage from "@assets/Engr._Jamiu_Rasheed_odofin_Founder_CEO_1766651126730.jpeg";
 import ceoBackground from "@assets/generated_images/mining_corporate_background_texture.png";
 
 export function CEOMessage() {
@@ -38,9 +39,11 @@ export function CEOMessage() {
               <p className="text-gray-400 uppercase tracking-wider text-sm font-medium mt-1">Founder & CEO</p>
             </div>
             
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white font-bold mt-4">
-              Read Full Bio
-            </Button>
+            <Link href="/about">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white font-bold mt-4">
+                Read Full Bio
+              </Button>
+            </Link>
           </div>
 
           {/* Image Content */}
@@ -49,11 +52,11 @@ export function CEOMessage() {
               {/* Decorative Elements behind image */}
               <div className="absolute inset-4 border-2 border-primary/30 rounded-sm translate-x-4 translate-y-4"></div>
               <div className="absolute inset-0 bg-gradient-to-b from-zinc-800 to-zinc-950 rounded-sm overflow-hidden shadow-2xl">
-                 {/* The CEO Image - using the provided cutout */}
+                 {/* The CEO Image */}
                  <img 
                   src={ceoImage} 
                   alt="Engr. Jamiu Rasheed Odofin" 
-                  className="w-full h-full object-cover object-top pt-8 hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                 />
               </div>
             </div>

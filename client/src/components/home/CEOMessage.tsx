@@ -1,6 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Quote } from "lucide-react";
 import { Link } from "wouter";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import ceoImage from "@assets/Engr._Jamiu_Rasheed_odofin_Founder_CEO_1766651126730.jpeg";
 import ceoBackground from "@assets/generated_images/mining_corporate_background_texture.png";
 
@@ -39,11 +46,29 @@ export function CEOMessage() {
               <p className="text-gray-400 uppercase tracking-wider text-sm font-medium mt-1">Founder & CEO</p>
             </div>
             
-            <Link href="/about">
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white font-bold mt-4">
-                Read Full Bio
-              </Button>
-            </Link>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white font-bold mt-4">
+                  Meet Our CEO
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl bg-zinc-900 text-white border-primary/20">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-heading font-bold text-primary">Message from Engr. Jamiu Rasheed Odofin</DialogTitle>
+                </DialogHeader>
+                <div className="mt-4 space-y-4 text-gray-300 leading-relaxed">
+                  <p>
+                    "Welcome to Eminent Mines Resources Limited. Our journey began with a vision to transform Nigeria's natural resources into sustainable development. We are committed to unearthing the immense mineral potential of our nation while upholding the highest global standards of safety and environmental stewardship."
+                  </p>
+                  <p>
+                    "With a focus on innovation and integrity, we lead exploration, extraction, and mineral trading operations that empower communities and drive industrial growth. Our team of experts works tirelessly to ensure that every project delivers maximum value to our stakeholders and contributes to the economic prosperity of Nigeria."
+                  </p>
+                  <p>
+                    "Thank you for being part of our story as we continue to lead the way in sustainable mining solutions across West Africa."
+                  </p>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
 
           {/* Image Content */}

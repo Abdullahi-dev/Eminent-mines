@@ -111,7 +111,7 @@ export default function Home() {
 
               <Link href="/about">
                 <Button variant="outline" className="border-foreground/20 hover:bg-foreground hover:text-white font-bold mt-4">
-                  Read Full Bio
+                  Meet Our Team
                 </Button>
               </Link>
             </div>

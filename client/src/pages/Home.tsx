@@ -12,7 +12,7 @@ import { Newspaper } from "lucide-react";
 import heroImage from "@assets/generated_images/cinematic_modern_mining_site_hero_background.png";
 import explorationImage from "@assets/generated_images/geologists_examining_rock_samples.png";
 import machineryImage from "@assets/generated_images/heavy_mining_machinery_fleet.png";
-import tradingImage from "@assets/generated_images/raw_minerals_pile_close_up.png";
+import tradingImage from "@assets/generated_images/unique_mineral_ores_and_crystals_close-up.png";
 import consultancyImage from "@assets/generated_images/nigerian_mining_consultants_in_boardroom.png";
 import schoolImage from "@assets/generated_images/nigerian_mining_students_in_lab.png";
 import waterImage from "@assets/generated_images/water_engineering_borehole_drilling.png";
@@ -280,9 +280,11 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
                   { title: "Investor-Ready Projects", desc: "Bankable feasibility studies and clear mineral titles for global partners." },
-                  { title: "Government Alignment", desc: "Deep collaboration with federal mining authorities for seamless operations." }
+                  { title: "Government Alignment", desc: "Deep collaboration with federal mining authorities for seamless operations." },
+                  { title: "Global Partnerships", desc: "Forging strategic alliances with international technology and equipment providers." },
+                  { title: "Community Development", desc: "Investing in host communities to ensure shared social and economic value." }
                 ].map((item, i) => (
-                  <div key={i} className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                  <div key={i} className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-primary/50 transition-colors">
                     <CheckCircle2 className="h-8 w-8 text-primary mb-4" />
                     <h4 className="text-lg font-bold text-white mb-2">{item.title}</h4>
                     <p className="text-sm text-gray-400">{item.desc}</p>

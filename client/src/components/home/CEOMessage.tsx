@@ -27,7 +27,7 @@ export function CEOMessage() {
           <div className="order-2 lg:order-1 space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-bold uppercase tracking-widest">
               <span className="h-2 w-2 rounded-full bg-primary"></span>
-              Leadership
+              CEO Message
             </div>
             
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-white leading-tight">

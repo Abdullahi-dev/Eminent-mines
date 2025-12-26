@@ -17,6 +17,9 @@ import consultancyImage from "@assets/generated_images/nigerian_mining_consultan
 import schoolImage from "@assets/generated_images/nigerian_mining_students_in_lab.png";
 import waterImage from "@assets/generated_images/water_engineering_borehole_drilling.png";
 import explosivesImage from "@assets/generated_images/mining_explosives_storage_magazine.png";
+import investorForumImage from "@assets/generated_images/nigerian_mining_investment_forum_scene.png";
+import lithiumFieldImage from "@assets/generated_images/geologists_analyzing_lithium_ore_samples_in_field.png";
+import communityProjectImage from "@assets/generated_images/community_development_project_in_mining_area.png";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -327,21 +330,21 @@ export default function Home() {
                 title: "Nigeria's Lithium Revolution: EMRL Leads the Way",
                 date: "Oct 24, 2025",
                 category: "Industry News",
-                img: tradingImage,
+                img: lithiumFieldImage,
                 excerpt: "EMRL's latest exploration results show record-high purity in our new lithium prospects..."
               },
               {
                 title: "Sustainable Mining: Integrating Community Growth",
                 date: "Oct 12, 2025",
                 category: "Sustainability",
-                img: schoolImage,
+                img: communityProjectImage,
                 excerpt: "Our new 'School of Mines' initiative is transforming local community engagement..."
               },
               {
                 title: "Global Investment Forum: Mining in West Africa",
                 date: "Sep 28, 2025",
                 category: "Investor Relations",
-                img: consultancyImage,
+                img: investorForumImage,
                 excerpt: "Join EMRL at the upcoming mining forum to discuss strategic mineral partnerships..."
               }
             ].map((item, i) => (

@@ -44,7 +44,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />
         
-        <div className="relative container mx-auto px-4 z-10 pt-20 pb-24 md:pb-20 lg:pb-32">
+        <div className="relative container mx-auto px-4 z-10 pt-20 pb-12 sm:pb-24 lg:pb-32">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -59,7 +59,7 @@ export default function Home() {
               Leading Nigeria's Mining Evolution
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-8xl font-heading font-black text-white leading-tight tracking-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-8xl font-heading font-black text-white leading-tight tracking-tight">
               Unearthing <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-400 to-primary-foreground animate-gradient-x">
                 <Typewriter words={["Global Value", "Sustainable Wealth", "Mineral Assets", "Future Growth"]} />
@@ -72,12 +72,12 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4 md:pt-6">
               <Link href="/services" className="w-full sm:w-auto">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-base md:text-lg px-6 md:px-10 h-14 md:h-16 rounded-sm shadow-xl hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 group w-full sm:w-auto">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-base md:text-lg px-6 md:px-10 h-14 md:h-16 rounded-sm shadow-xl hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 group w-full">
                   Explore Solutions <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link href="/contact" className="w-full sm:w-auto">
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 font-bold text-base md:text-lg px-6 md:px-10 h-14 md:h-16 backdrop-blur-sm rounded-sm hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 font-bold text-base md:text-lg px-6 md:px-10 h-14 md:h-16 backdrop-blur-sm rounded-sm hover:-translate-y-1 transition-all duration-300 w-full">
                   Partner With Us
                 </Button>
               </Link>
@@ -86,14 +86,14 @@ export default function Home() {
         </div>
 
         {/* Dynamic Stats Section */}
-        <div className="absolute bottom-0 w-full bg-black/80 backdrop-blur-xl border-t border-white/10 py-8 lg:py-10 z-20">
+        <div className="absolute bottom-0 w-full bg-black/80 backdrop-blur-xl border-t border-white/10 py-6 md:py-8 lg:py-10 z-20">
           <div className="container mx-auto px-4">
             <motion.div 
               variants={staggerContainer}
               initial="initial"
               whileInView="whileInView"
               viewport={{ once: true }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8"
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"
             >
               {[
                 { label: "Strategic Assets", value: "15+", icon: Globe },

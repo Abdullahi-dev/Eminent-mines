@@ -5,6 +5,7 @@ import { Link } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Typewriter } from "@/components/ui/typewriter";
+import { Counter } from "@/components/ui/counter";
 import { CEOMessage } from "@/components/home/CEOMessage";
 
 import heroImage from "@assets/generated_images/cinematic_modern_mining_site_hero_background.png";
@@ -96,10 +97,10 @@ export default function Home() {
               className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8"
             >
               {[
-                { label: "Strategic Assets", value: "15+", icon: Globe },
-                { label: "Export Capacity", value: "100k+", icon: TrendingUp },
-                { label: "Expert Personnel", value: "250+", icon: Users },
-                { label: "Compliance Rate", value: "100%", icon: Shield }
+                { label: "Strategic Assets", value: 15, suffix: "+", icon: Globe },
+                { label: "Export Capacity", value: 100000, suffix: "+", icon: TrendingUp },
+                { label: "Expert Personnel", value: 250, suffix: "+", icon: Users },
+                { label: "Compliance Rate", value: 100, suffix: "%", icon: Shield }
               ].map((stat, i) => (
                 <motion.div 
                   key={i} 
@@ -110,7 +111,9 @@ export default function Home() {
                     <stat.icon className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <div className="text-3xl font-black font-heading text-white">{stat.value}</div>
+                    <div className="text-3xl font-black font-heading text-white">
+                      <Counter end={stat.value} suffix={stat.suffix} />
+                    </div>
                     <div className="text-xs uppercase tracking-widest text-gray-400 font-bold">{stat.label}</div>
                   </div>
                 </motion.div>
@@ -120,29 +123,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Competitive Edge - New Section */}
+      {/* Competitive Edge - Improved Layout */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-zinc-50/50 -skew-x-12 translate-x-1/4 -z-10" />
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-20 items-center">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="lg:w-1/2 relative"
-            >
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] aspect-[4/5]">
-                <img src={explorationImage} alt="Precision Exploration" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10" />
-              <div className="absolute -bottom-10 -right-10 bg-primary p-10 rounded-2xl shadow-2xl hidden lg:block max-w-xs border-4 border-white">
-                <p className="text-white font-heading font-black text-2xl leading-tight italic">
-                  "Innovating the landscape of resource development."
-                </p>
-              </div>
-            </motion.div>
-
+          <div className="flex flex-col lg:flex-row gap-20 items-start">
             <div className="lg:w-1/2 space-y-10">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -151,9 +136,15 @@ export default function Home() {
               >
                 <h2 className="text-primary font-black uppercase tracking-widest text-sm mb-4">Competitive Edge</h2>
                 <h3 className="text-4xl md:text-5xl font-heading font-black text-zinc-900 leading-tight">
-                  Why Global Partners Choose EMRL
+                  Driving National Prosperity through Sustainable Mining
                 </h3>
               </motion.div>
+
+              <div className="bg-primary/5 p-8 border-l-8 border-primary rounded-r-2xl italic">
+                <p className="text-zinc-800 font-heading font-medium text-xl leading-relaxed">
+                  "At EMRL, we don't just extract minerals; we build the infrastructure for Nigeria's future, ensuring every ton mined contributes to our shared economic sovereignty."
+                </p>
+              </div>
 
               <div className="grid gap-8">
                 {[
@@ -193,6 +184,19 @@ export default function Home() {
                 </Link>
               </motion.div>
             </div>
+
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="lg:w-1/2 relative lg:sticky lg:top-24"
+            >
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] aspect-[4/5]">
+                <img src={explorationImage} alt="Precision Exploration" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10" />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -256,6 +260,42 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Strategic Impact Section */}
+      <section className="py-24 bg-zinc-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-50" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2">
+              <h2 className="text-primary font-black uppercase tracking-widest text-sm mb-4">Strategic Impact</h2>
+              <h3 className="text-4xl md:text-5xl font-heading font-black text-white mb-8 leading-tight">
+                Empowering Nigeria's <br /> Global Mineral Presence
+              </h3>
+              <p className="text-xl text-gray-400 mb-10 leading-relaxed font-medium">
+                EMRL is strategically positioned to serve as the gateway for international investment in Nigeria's rich mineral corridors. We bridge the gap between geological potential and commercial reality.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {[
+                  { title: "Investor-Ready Projects", desc: "Bankable feasibility studies and clear mineral titles for global partners." },
+                  { title: "Government Alignment", desc: "Deep collaboration with federal mining authorities for seamless operations." }
+                ].map((item, i) => (
+                  <div key={i} className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                    <CheckCircle2 className="h-8 w-8 text-primary mb-4" />
+                    <h4 className="text-lg font-bold text-white mb-2">{item.title}</h4>
+                    <p className="text-sm text-gray-400">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="lg:w-1/2">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-video border border-white/10">
+                <img src={tradingImage} alt="Mineral Export Operations" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-black/20" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

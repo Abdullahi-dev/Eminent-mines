@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Typewriter } from "@/components/ui/typewriter";
 import { Counter } from "@/components/ui/counter";
 import { CEOMessage } from "@/components/home/CEOMessage";
+import { Newspaper } from "lucide-react";
 
 import heroImage from "@assets/generated_images/cinematic_modern_mining_site_hero_background.png";
 import explorationImage from "@assets/generated_images/geologists_examining_rock_samples.png";
@@ -300,6 +301,76 @@ export default function Home() {
       </section>
 
       <CEOMessage />
+
+      {/* News & Insights Section */}
+      <section className="py-24 bg-white relative">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div className="max-w-2xl">
+              <h2 className="text-primary font-black uppercase tracking-widest text-sm mb-4">News & Insights</h2>
+              <h3 className="text-4xl md:text-5xl font-heading font-black text-zinc-900 leading-tight">
+                Latest from the Mining Sector
+              </h3>
+            </div>
+            <Link href="/news">
+              <Button variant="outline" className="border-zinc-200 hover:border-primary font-bold h-12 px-6 rounded-xl">
+                View All Updates <Newspaper className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Nigeria's Lithium Revolution: EMRL Leads the Way",
+                date: "Oct 24, 2025",
+                category: "Industry News",
+                img: tradingImage,
+                excerpt: "EMRL's latest exploration results show record-high purity in our new lithium prospects..."
+              },
+              {
+                title: "Sustainable Mining: Integrating Community Growth",
+                date: "Oct 12, 2025",
+                category: "Sustainability",
+                img: schoolImage,
+                excerpt: "Our new 'School of Mines' initiative is transforming local community engagement..."
+              },
+              {
+                title: "Global Investment Forum: Mining in West Africa",
+                date: "Sep 28, 2025",
+                category: "Investor Relations",
+                img: consultancyImage,
+                excerpt: "Join EMRL at the upcoming mining forum to discuss strategic mineral partnerships..."
+              }
+            ].map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group cursor-pointer"
+              >
+                <div className="relative h-64 rounded-3xl overflow-hidden mb-6">
+                  <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                    {item.category}
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="text-zinc-400 text-sm font-bold">{item.date}</div>
+                  <h4 className="text-xl font-black text-zinc-900 group-hover:text-primary transition-colors leading-tight">
+                    {item.title}
+                  </h4>
+                  <p className="text-zinc-600 line-clamp-2 text-sm leading-relaxed">
+                    {item.excerpt}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Modern CTA */}
       <section className="py-16 md:py-24 bg-primary relative overflow-hidden">

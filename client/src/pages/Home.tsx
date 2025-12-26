@@ -44,7 +44,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />
         
-        <div className="relative container mx-auto px-4 z-10 pt-20 pb-20 lg:pb-32">
+        <div className="relative container mx-auto px-4 z-10 pt-20 pb-24 md:pb-20 lg:pb-32">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -59,25 +59,25 @@ export default function Home() {
               Leading Nigeria's Mining Evolution
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-8xl font-heading font-black text-white leading-tight tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-8xl font-heading font-black text-white leading-tight tracking-tight">
               Unearthing <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-400 to-primary-foreground animate-gradient-x">
                 <Typewriter words={["Global Value", "Sustainable Wealth", "Mineral Assets", "Future Growth"]} />
               </span>
             </h1>
             
-            <p className="text-sm sm:text-lg md:text-2xl text-gray-300 max-w-2xl leading-relaxed font-medium">
+            <p className="text-base sm:text-lg md:text-2xl text-gray-300 max-w-2xl leading-relaxed font-medium">
               Eminent Mines Resources Limited integrates advanced geological science with indigenous expertise to deliver world-class mineral solutions across the African continent.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 pt-4 md:pt-6">
-              <Link href="/services">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-base md:text-lg px-6 md:px-10 h-12 md:h-16 rounded-sm shadow-xl hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 group w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4 md:pt-6">
+              <Link href="/services" className="w-full sm:w-auto">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-base md:text-lg px-6 md:px-10 h-14 md:h-16 rounded-sm shadow-xl hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 group w-full sm:w-auto">
                   Explore Solutions <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link href="/contact">
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 font-bold text-base md:text-lg px-6 md:px-10 h-12 md:h-16 backdrop-blur-sm rounded-sm hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
+              <Link href="/contact" className="w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 font-bold text-base md:text-lg px-6 md:px-10 h-14 md:h-16 backdrop-blur-sm rounded-sm hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
                   Partner With Us
                 </Button>
               </Link>

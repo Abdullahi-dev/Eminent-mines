@@ -2,7 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CheckCircle2 } from "lucide-react";
 import ceoImage from "@assets/Engr._Jamiu_Rasheed_odofin_Founder_CEO_1766651126730.jpeg";
-import cfImage from "@assets/Dr_Isiak_Adeyemi_Alabi.._founder_CFO-_1766575982689.png";
+import cfImage from "@assets/Dr._Isiak_Adeyemi_Alabi-Co-founder_1766780167112.png";
 import ctoImage from "@assets/Mr._Abdullahi_Mahmud_Co-founder_CTOBR&D_1766574911792.png";
 import csoImage1 from "@assets/Engr._Ola_Rokeeb_Co-founder_CSO_(2)_1766574916972.png";
 import cmoImage from "@assets/Engr._Abdulmujeeb_Ramadan_Sodiq_Co-founder_CMO-_1766574924512.png";

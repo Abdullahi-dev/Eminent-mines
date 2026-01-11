@@ -5,7 +5,23 @@ import { Truck, Wrench, Calendar, AlertCircle } from "lucide-react";
 import fleetImage from "@assets/generated_images/mining_equipment_rental_fleet.png";
 import { BookingForm } from "@/components/forms/BookingForm";
 
+import projectImage2 from "@assets/WhatsApp_Image_2025-12-04_at_11.18.01_PM_1767759477762.jpeg";
+import drillingRigImage from "@assets/generated_images/borehole_drilling_rig_operation.png";
+import machineryWorkshopImage from "@assets/generated_images/mining_equipment_fabrication_workshop.png";
+import heavyFleetImage from "@assets/generated_images/heavy_mining_machinery_fleet.png";
+
 export default function Equipment() {
+  const fleetItems = [
+    { name: "Crawler Excavators", img: projectImage2 },
+    { name: "Wheel Loaders", img: heavyFleetImage },
+    { name: "Bulldozers", img: fleetImage },
+    { name: "Dump Trucks", img: heavyFleetImage },
+    { name: "Crushing Plants", img: machineryWorkshopImage },
+    { name: "Drilling Rigs", img: drillingRigImage },
+    { name: "Lowbeds", img: fleetImage },
+    { name: "Compressors", img: machineryWorkshopImage }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white">
       <Navbar />
@@ -14,7 +30,7 @@ export default function Equipment() {
       <section className="relative h-[60vh] w-full overflow-hidden bg-zinc-900">
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${fleetImage})`, opacity: 0.7 }}
+          style={{ backgroundImage: `url(${heavyFleetImage})`, opacity: 0.7 }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent" />
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
@@ -33,15 +49,18 @@ export default function Equipment() {
             <div>
               <h2 className="text-3xl font-heading font-bold text-foreground mb-8">Our Fleet</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {[
-                  "Crawler Excavators", "Wheel Loaders", "Bulldozers", "Dump Trucks", "Crushing Plants", "Drilling Rigs", "Lowbeds", "Compressors"
-                ].map((item, i) => (
-                  <div key={i} className="bg-zinc-50 border border-border p-6 rounded-sm hover:border-primary transition-colors group">
-                    <div className="h-12 w-12 bg-white mb-4 flex items-center justify-center rounded-sm shadow-sm">
-                      <Truck className="h-6 w-6 text-primary" />
+                {fleetItems.map((item, i) => (
+                  <div key={i} className="bg-zinc-50 border border-border overflow-hidden rounded-xl hover:border-primary transition-all group shadow-sm">
+                    <div className="h-48 overflow-hidden relative">
+                      <img src={item.img} alt={item.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-sm">
+                        <Truck className="h-5 w-5 text-primary" />
+                      </div>
                     </div>
-                    <h3 className="text-lg font-bold font-heading mb-1">{item}</h3>
-                    <p className="text-xs text-muted-foreground">Daily / Weekly / Monthly</p>
+                    <div className="p-6 bg-white">
+                      <h3 className="text-lg font-bold font-heading mb-1 text-zinc-900">{item.name}</h3>
+                      <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Daily / Weekly / Monthly</p>
+                    </div>
                   </div>
                 ))}
               </div>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Calendar, User, ArrowLeft, Share2, MessageSquare } from "lucide-react";
 import { Link } from "wouter";
 import lithiumFieldImage from "@assets/WhatsApp_Image_2025-12-04_at_11.17.41_PM_1767759299456.jpeg";
-import communityProjectImage from "@assets/generated_images/community_development_project_in_mining_area.png";
+import communityProjectImage from "@assets/image_1767761769382.png";
 import investorForumImage from "@assets/generated_images/nigerian_mining_investment_forum_scene.png";
 
 const newsPosts = {
@@ -26,23 +26,33 @@ The project has already moved into the resource definition phase, utilizing mode
 Beyond the technical success, the lithium project is designed with a "Community First" architecture, ensuring that exploration activities generate immediate local employment and infrastructure benefits.`
   },
   "sustainable-mining": {
-    title: "Sustainable Mining: Integrating Community Growth",
+    title: "Sustainable Mining: Integrating Community Growth and Social Equity",
     date: "Oct 12, 2025",
     category: "Sustainability",
     author: "Sustainability Dept",
     img: communityProjectImage,
-    content: `Sustainability at EMRL isn't a buzzword; it's a fundamental operational protocol. As we scale our operations across Nigeria, we are redefining the relationship between extractive industries and their host communities.
+    content: `Sustainability at Eminent Mines Resources Limited (EMRL) isn't just a corporate buzzword; it's a fundamental operational protocol that guides every drill bit and every community handshake. As we strategically scale our mining operations across the diverse landscapes of Nigeria, we are actively redefining the relationship between extractive industries and their host communities through a model of shared prosperity and environmental stewardship.
 
-Our flagship 'School of Mines' initiative has recently graduated its first cohort of 50 local youth, trained in heavy machinery operation and safety compliance. This initiative directly addresses the historic gap between local talent and technical industrial requirements.
+Our flagship 'School of Mines' initiative has recently reached a historic milestone, graduating its first cohort of 50 local youth. These young men and women have been rigorously trained in heavy machinery operation, advanced safety compliance, and modern mineral processing techniques. This initiative directly addresses the systemic gap between local talent and the technical requirements of a modern industrial mining operation, transforming job seekers into skilled professionals.
 
-"True sustainability means that the day the mine closes, the community is stronger than the day it opened," says our Head of Sustainability. 
+"True sustainability means that the day the mine eventually closes, the community must be fundamentally stronger, more skilled, and more resilient than the day it opened," says our Head of Sustainability. This philosophy is embedded in our Social License to Operate (SLO), which we view as an ongoing dialogue rather than a one-time permit.
 
-Our approach integrates three core pillars:
-1. Technical Knowledge Transfer: Empowering locals with globally recognized mining skills.
-2. Environmental Stewardship: Concurrent reclamation strategies that restore the land alongside mining activities.
-3. Economic Diversification: Supporting local SMEs to provide services to the mining site, ensuring a resilient local economy.
+Our strategic approach to community integration is built upon three core pillars:
 
-Recent environmental audits have confirmed that our water engineering protocols have successfully protected local aquifers, while our reforestation program has already planted over 5,000 indigenous trees in reclaimed areas.`
+1. Technical Knowledge Transfer & Capacity Building:
+We don't just provide jobs; we provide careers. By empowering local residents with globally recognized mining certifications and technical skills, we ensure that the economic benefits of mining remain within the community long-term. Our training programs are designed to meet international standards, making our graduates competitive in the global mining labor market.
+
+2. Environmental Stewardship & Concurrent Reclamation:
+EMRL employs a "Life-of-Mine" environmental strategy. Unlike traditional mining models that wait until closure to begin restoration, we practice concurrent reclamation. This means as we move through an ore body, we are simultaneously restoring the land behind us. Our reforestation program has already successfully planted over 5,000 indigenous trees in reclaimed zones, effectively restoring local biodiversity and preventing soil erosion.
+
+3. Economic Diversification & SME Support:
+We recognize that a healthy community requires a diverse economy. EMRL actively supports local Small and Medium Enterprises (SMEs) to become part of our supply chain. From catering and logistics to specialized maintenance services, we prioritize local vendors. This creates a powerful economic multiplier effect, where mining revenue stimulates growth across multiple sectors of the local economy.
+
+Recent comprehensive environmental audits have confirmed the efficacy of our water engineering protocols. Our advanced borehole systems and filtration technologies have successfully protected local aquifers from contamination, ensuring that host communities have continued access to clean, safe drinking water. 
+
+In a recent commissioning ceremony in one of our host communities, local leaders joined EMRL executives to celebrate the opening of a new solar-powered water project. Dressed in vibrant traditional Ankara and EMRL-branded corporate attire, the scene was a powerful visual representation of our "Indigenous Insight" value—where global corporate standards meet local cultural respect.
+
+As Nigeria continues to position itself as a global hub for solid minerals, EMRL remains dedicated to proving that profitable mining and community development are not mutually exclusive, but are in fact two sides of the same coin of national progress.`
   },
   "global-investment": {
     title: "Global Investment Forum: Mining in West Africa",

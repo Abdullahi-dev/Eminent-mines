@@ -9,17 +9,19 @@ import projectImage2 from "@assets/WhatsApp_Image_2025-12-04_at_11.18.01_PM_1767
 import drillingRigImage from "@assets/generated_images/borehole_drilling_rig_operation.png";
 import machineryWorkshopImage from "@assets/image_1767763709253.png";
 import heavyFleetImage from "@assets/image_1767763727146.png";
+import dumpTruckImage from "@assets/generated_images/heavy_mining_machinery_fleet.png";
+import compressorImage from "@assets/generated_images/mining_equipment_fabrication_workshop.png";
 
 export default function Equipment() {
   const fleetItems = [
     { name: "Crawler Excavators", img: projectImage2 },
     { name: "Wheel Loaders", img: heavyFleetImage },
     { name: "Bulldozers", img: fleetImage },
-    { name: "Dump Trucks", img: "@assets/generated_images/heavy_mining_machinery_fleet.png" },
+    { name: "Dump Trucks", img: dumpTruckImage },
     { name: "Crushing Plants", img: machineryWorkshopImage },
     { name: "Drilling Rigs", img: drillingRigImage },
     { name: "Lowbeds", img: fleetImage },
-    { name: "Compressors", img: "@assets/generated_images/mining_equipment_fabrication_workshop.png" }
+    { name: "Compressors", img: compressorImage }
   ];
 
   return (

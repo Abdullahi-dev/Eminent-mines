@@ -15,6 +15,8 @@ import Membership from "@/pages/Membership";
 import Equipment from "@/pages/Equipment";
 import Laboratory from "@/pages/Laboratory";
 import News from "@/pages/News";
+import NewsDetail from "@/pages/NewsDetail";
+import ProjectDetail from "@/pages/ProjectDetail";
 
 // Service Detail Pages
 import MiningQuarry from "@/pages/services/MiningQuarry";
@@ -40,6 +42,8 @@ function Router() {
         <Route path="/equipment" component={Equipment} />
         <Route path="/laboratory" component={Laboratory} />
         <Route path="/news" component={News} />
+        <Route path="/news/:id" component={NewsDetail} />
+        <Route path="/projects/:id" component={ProjectDetail} />
         
         {/* Service Detail Routes */}
         <Route path="/services/mining-quarry" component={MiningQuarry} />

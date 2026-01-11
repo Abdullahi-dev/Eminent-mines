@@ -6,6 +6,7 @@ import fleetImage from "@assets/generated_images/mining_equipment_rental_fleet.p
 import { BookingForm } from "@/components/forms/BookingForm";
 
 import projectImage2 from "@assets/WhatsApp_Image_2025-12-04_at_11.18.01_PM_1767759477762.jpeg";
+import projectImage3 from "@assets/WhatsApp_Image_2025-12-04_at_11.17.38_PM_1767752872774.jpeg";
 import drillingRigImage from "@assets/generated_images/borehole_drilling_rig_operation.png";
 import machineryWorkshopImage from "@assets/image_1767763709253.png";
 import heavyFleetImage from "@assets/image_1767763727146.png";
@@ -19,7 +20,7 @@ export default function Equipment() {
     { name: "Wheel Loaders", img: heavyFleetImage },
     { name: "Bulldozers", img: fleetImage },
     { name: "Dump Trucks", img: dumpTruckImage },
-    { name: "Crushing Plants", img: machineryWorkshopImage },
+    { name: "Crushing Plants", img: projectImage3 },
     { name: "Drilling Rigs", img: drillingRigImage },
     { name: "Lowbeds", img: lowbedImage },
     { name: "Compressors", img: compressorImage }

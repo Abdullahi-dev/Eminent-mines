@@ -2,13 +2,14 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Calendar, User, ArrowRight } from "lucide-react";
-import lithiumFieldImage from "@assets/generated_images/nigerian_geologists_examining_lithium_ore_outdoors.png";
+import { Link } from "wouter";
+import lithiumFieldImage from "@assets/WhatsApp_Image_2025-12-04_at_11.17.41_PM_1767759299456.jpeg";
 import communityProjectImage from "@assets/generated_images/community_development_project_in_mining_area.png";
 import investorForumImage from "@assets/generated_images/nigerian_mining_investment_forum_scene.png";
 
 const newsPosts = [
   {
-    id: 1,
+    id: "lithium-revolution",
     title: "Nigeria's Lithium Revolution: EMRL Leads the Way",
     date: "Oct 24, 2025",
     category: "Industry News",
@@ -17,7 +18,7 @@ const newsPosts = [
     excerpt: "EMRL's latest exploration results show record-high purity in our new lithium prospects across the northern corridors. This milestone positions Nigeria as a key player in the global energy transition."
   },
   {
-    id: 2,
+    id: "sustainable-mining",
     title: "Sustainable Mining: Integrating Community Growth",
     date: "Oct 12, 2025",
     category: "Sustainability",
@@ -26,7 +27,7 @@ const newsPosts = [
     excerpt: "Our new 'School of Mines' initiative is transforming local community engagement by providing technical training and sustainable livelihood opportunities for host communities."
   },
   {
-    id: 3,
+    id: "global-investment",
     title: "Global Investment Forum: Mining in West Africa",
     date: "Sep 28, 2025",
     category: "Investor Relations",
@@ -87,9 +88,11 @@ export default function News() {
                     {post.excerpt}
                   </p>
                   
-                  <button className="inline-flex items-center text-primary font-black uppercase tracking-widest text-xs pt-4 group/btn">
-                    Read Full Story <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
+                  <Link href={`/news/${post.id}`}>
+                    <a className="inline-flex items-center text-primary font-black uppercase tracking-widest text-xs pt-4 group/btn hover:underline">
+                      Read Full Story <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+                  </Link>
                 </div>
               </motion.article>
             ))}

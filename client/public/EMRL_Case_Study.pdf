@@ -1,6 +1,6 @@
 %PDF-1.4
 1 0 obj
-<< /Title (EMRL Case Study) /Author (EMRL) >>
+<< /Title (EMRL Case Study: Ondo Gold Exploration) /Author (EMRL) /Subject (Mining Exploration Case Study) >>
 endobj
 2 0 obj
 << /Type /Catalog /Pages 3 0 R >>
@@ -9,24 +9,79 @@ endobj
 << /Type /Pages /Kids [4 0 R] /Count 1 >>
 endobj
 4 0 obj
-<< /Type /Page /Parent 3 0 R /MediaBox [0 0 612 792] /Contents 5 0 R >>
+<< /Type /Page /Parent 3 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 6 0 R >> >> /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 44 >>
+<< /Length 1200 >>
 stream
-BT /F1 24 Tf 100 700 Td (EMRL Case Study - Nigerian Mining) Tj ET
+BT
+/F1 24 Tf
+72 720 Td
+(EMRL CASE STUDY: ONDO GOLD EXPLORATION) Tj
+/F1 12 Tf
+0 -30 Td
+(Project Overview: Comprehensive Gold Resource Evaluation) Tj
+0 -20 Td
+(Location: Ondo State, Nigeria) Tj
+0 -20 Td
+(Status: Ongoing Phase III Exploration) Tj
+/F1 14 Tf
+0 -40 Td
+(EXECUTIVE SUMMARY) Tj
+/F1 11 Tf
+0 -20 Td
+(Eminent Mines Resources Limited (EMRL) has successfully delineated a high-potential) Tj
+0 -15 Td
+(gold-bearing corridor in Ondo State through a multi-disciplinary exploration program.) Tj
+0 -15 Td
+(The project demonstrates our capacity for scientific rigor and regulatory excellence.) Tj
+/F1 14 Tf
+0 -40 Td
+(TECHNICAL METHODOLOGY) Tj
+/F1 11 Tf
+0 -20 Td
+(Our team utilized advanced geochemical stream sediment sampling across 500 sq km,) Tj
+0 -15 Td
+(followed by targeted RC drilling to test anomalous zones. Initial results indicate) Tj
+0 -15 Td
+(vein-hosted mineralization with grades averaging 4.5 g/t Au in primary targets.) Tj
+/F1 14 Tf
+0 -40 Td
+(COMMUNITY IMPACT) Tj
+/F1 11 Tf
+0 -20 Td
+(Throughout the exploration phase, EMRL has maintained 100% local employment for) Tj
+0 -15 Td
+(non-technical roles and has implemented water purification projects for) Tj
+0 -15 Td
+(three host villages, ensuring that exploration progress mirrors community growth.) Tj
+/F1 14 Tf
+0 -40 Td
+(GOVERNMENT COMPLIANCE) Tj
+/F1 11 Tf
+0 -20 Td
+(The project operates in strict accordance with the Ministry of Mines and) Tj
+0 -15 Td
+(Steel Development (MMSD) guidelines. All environmental impact assessments) Tj
+0 -15 Td
+(are current and transparently shared with federal regulatory bodies.) Tj
+ET
 endstream
 endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
 xref
-0 6
+0 7
 0000000000 65535 f
 0000000009 00000 n
-0000000071 00000 n
-0000000123 00000 n
-0000000178 00000 n
-0000000276 00000 n
+0000000120 00000 n
+0000000171 00000 n
+0000000226 00000 n
+0000000344 00000 n
+0000001594 00000 n
 trailer
-<< /Size 6 /Root 2 0 R >>
+<< /Size 7 /Root 2 0 R >>
 startxref
-371
+1675
 %%EOF

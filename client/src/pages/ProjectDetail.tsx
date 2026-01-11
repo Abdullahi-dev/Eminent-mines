@@ -108,10 +108,17 @@ export default function ProjectDetail() {
               </p>
 
               <div className="bg-white p-8 rounded-2xl border border-zinc-100 shadow-sm">
-                <h3 className="text-xl font-bold mb-4 text-zinc-900">Project Overview</h3>
-                <p className="text-zinc-600 leading-relaxed">
-                  {project.details}
-                </p>
+                <h3 className="text-xl font-bold mb-4 text-zinc-900">Detailed Scope of Work</h3>
+                <div className="space-y-4 text-zinc-600 leading-relaxed">
+                  <p>{project.details}</p>
+                  <p>Our approach for this project follows the EMRL Standard Operating Procedure for Sustainable Mining:</p>
+                  <ul className="list-disc pl-5 space-y-2">
+                    <li>Advanced Geophysical Mapping & Data Interpretation</li>
+                    <li>Systematic Soil & Stream Sediment Geochemical Analysis</li>
+                    <li>High-Resolution Topographic Surveying</li>
+                    <li>Community-First ESG Integration & Social License Management</li>
+                  </ul>
+                </div>
               </div>
 
               <a 
@@ -119,7 +126,7 @@ export default function ProjectDetail() {
                 download
                 className="inline-flex items-center justify-center gap-3 bg-primary text-white font-bold py-4 px-8 rounded-full hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl w-full sm:w-auto"
               >
-                <Download className="h-5 w-5" /> Download Full Case Study
+                <Download className="h-5 w-5" /> Download Full Case Study (PDF)
               </a>
             </motion.div>
           </div>

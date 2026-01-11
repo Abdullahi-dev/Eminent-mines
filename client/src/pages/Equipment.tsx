@@ -9,7 +9,7 @@ import projectImage2 from "@assets/WhatsApp_Image_2025-12-04_at_11.18.01_PM_1767
 import drillingRigImage from "@assets/generated_images/borehole_drilling_rig_operation.png";
 import machineryWorkshopImage from "@assets/image_1767763709253.png";
 import heavyFleetImage from "@assets/image_1767763727146.png";
-import dumpTruckImage from "@assets/generated_images/heavy_mining_machinery_fleet.png";
+import dumpTruckImage from "@assets/generated_images/mineral_export_loading_operation.png";
 import compressorImage from "@assets/generated_images/mining_equipment_fabrication_workshop.png";
 
 export default function Equipment() {

@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Calendar, MapPin, Download } from "lucide-react";
 import projectImage from "@assets/generated_images/mining_project_site_overview.png";
 

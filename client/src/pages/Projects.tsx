@@ -74,12 +74,18 @@ export default function Projects() {
                     <span className="flex items-center gap-2"><MapPin className="h-4 w-4" /> {project.location}</span>
                     
                     <div className="ml-auto flex gap-2">
-                       <Button variant="outline" size="sm" className="h-8 gap-2 text-xs">
+                       <a 
+                         href="/EMRL_Case_Study.pdf" 
+                         download 
+                         className="inline-flex items-center justify-center h-8 px-3 border border-zinc-200 rounded-md text-xs font-bold text-zinc-600 hover:bg-zinc-50 transition-colors gap-2"
+                       >
                          <Download className="h-3 w-3" /> Case Study
-                       </Button>
-                       <Button variant="link" className="text-primary font-bold p-0 h-auto">
-                        View Details <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
+                       </a>
+                       <Link href="/projects">
+                         <a className="inline-flex items-center text-primary font-bold text-sm hover:underline">
+                           View Details <ArrowRight className="ml-2 h-4 w-4" />
+                         </a>
+                       </Link>
                     </div>
                   </div>
                 </div>

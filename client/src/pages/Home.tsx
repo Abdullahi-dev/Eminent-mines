@@ -18,8 +18,9 @@ import schoolImage from "@assets/generated_images/nigerian_mining_students_in_la
 import waterImage from "@assets/generated_images/water_engineering_borehole_drilling.png";
 import explosivesImage from "@assets/generated_images/mining_explosives_storage_magazine.png";
 import investorForumImage from "@assets/generated_images/nigerian_mining_investment_forum_scene.png";
-import lithiumFieldImage from "@assets/generated_images/geologists_analyzing_lithium_ore_samples_in_field.png";
+import lithiumFieldImage from "@assets/generated_images/nigerian_geologists_examining_lithium_ore_outdoors.png";
 import communityProjectImage from "@assets/generated_images/community_development_project_in_mining_area.png";
+import mineralComplianceImage from "@assets/generated_images/mineral_resources_development_compliance_document_scene.png";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -152,7 +153,7 @@ export default function Home() {
 
               <div className="grid gap-8">
                 {[
-                  { icon: Shield, title: "Uncompromising Compliance", desc: "Rigorous adherence to Ministry of Mines and Steel Development (MMSD) regulations ensures smooth project execution." },
+                  { icon: Shield, title: "Uncompromising Compliance", desc: "Rigorous adherence to Ministry of Mines and Steel Development (MMSD) Mineral Resources regulations ensures smooth project execution." },
                   { icon: Zap, title: "Scientific Precision", desc: "Utilizing modern geochemical and geophysical methods for accurate resource mapping and pit optimization." },
                   { icon: Users, title: "Indigenous Insight", desc: "Our deep understanding of local community relations significantly mitigates operational risks and fosters shared prosperity." }
                 ].map((item, i) => (
@@ -197,7 +198,7 @@ export default function Home() {
               className="lg:w-1/2 relative lg:sticky lg:top-24"
             >
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] aspect-[4/5]">
-                <img src={explorationImage} alt="Precision Exploration" className="w-full h-full object-cover" />
+                <img src={mineralComplianceImage} alt="MMSD Compliance" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10" />
             </motion.div>

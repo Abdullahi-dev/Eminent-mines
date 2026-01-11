@@ -49,7 +49,7 @@ export function CEOMessage() {
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white font-bold mt-4">
-                  Meet Our CEO
+                  Read Our CEO message
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-2xl bg-zinc-900 text-white border-primary/20">

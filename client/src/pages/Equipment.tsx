@@ -10,7 +10,8 @@ import drillingRigImage from "@assets/generated_images/borehole_drilling_rig_ope
 import machineryWorkshopImage from "@assets/image_1767763709253.png";
 import heavyFleetImage from "@assets/image_1767763727146.png";
 import dumpTruckImage from "@assets/generated_images/mineral_export_loading_operation.png";
-import compressorImage from "@assets/generated_images/mining_equipment_rental_fleet.png";
+import compressorImage from "@assets/generated_images/mining_equipment_fabrication_workshop.png";
+import lowbedImage from "@assets/generated_images/mining_equipment_rental_fleet.png";
 
 export default function Equipment() {
   const fleetItems = [
@@ -20,7 +21,7 @@ export default function Equipment() {
     { name: "Dump Trucks", img: dumpTruckImage },
     { name: "Crushing Plants", img: machineryWorkshopImage },
     { name: "Drilling Rigs", img: drillingRigImage },
-    { name: "Lowbeds", img: fleetImage },
+    { name: "Lowbeds", img: lowbedImage },
     { name: "Compressors", img: compressorImage }
   ];
 

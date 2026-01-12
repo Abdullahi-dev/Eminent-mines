@@ -77,11 +77,15 @@ export function Navbar() {
               </a>
             </Link>
           ))}
-          <Link href="/contact">
+          <a 
+            href="https://wa.me/2349076929317?text=Hello%20EMRL%20Founder%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20your%20mining%20services."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
              <Button className="bg-primary hover:bg-primary/90 text-white font-bold uppercase text-xs tracking-widest px-6">
               Get Quote
             </Button>
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -111,7 +115,15 @@ export function Navbar() {
               Membership Portal
             </a>
           </Link>
-          <Button className="w-full mt-4">Get Quote</Button>
+          <a 
+            href="https://wa.me/2349076929317?text=Hello%20EMRL%20Founder%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20your%20mining%20services."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full"
+            onClick={() => setIsOpen(false)}
+          >
+            <Button className="w-full mt-4">Get Quote</Button>
+          </a>
         </div>
       )}
     </header>

@@ -82,11 +82,16 @@ export default function Home() {
                   Explore Solutions <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link href="/contact" className="w-full sm:w-auto">
+              <a 
+                href="https://wa.me/2349076929317?text=Hello%20EMRL%20Founder%2C%20I%20would%20like%20to%20partner%20with%20you."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
                 <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 font-bold text-base md:text-lg px-6 md:px-10 h-14 md:h-16 backdrop-blur-sm rounded-sm hover:-translate-y-1 transition-all duration-300 w-full">
                   Partner With Us
                 </Button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -390,11 +395,16 @@ export default function Home() {
               Join a network of global investors and industry leaders partnering with EMRL to drive sustainable growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
-              <Link href="/contact" className="w-full sm:w-auto">
+              <a 
+                href="https://wa.me/2349076929317?text=Hello%20EMRL%20Founder%2C%20I%20would%20like%20to%20initiate%20a%20partnership."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
                 <Button className="bg-white text-primary hover:bg-zinc-100 font-black text-base md:text-xl px-8 md:px-12 h-14 md:h-20 rounded-xl md:rounded-2xl shadow-2xl transition-all hover:scale-105 active:scale-95 w-full">
                   Initiate Partnership
                 </Button>
-              </Link>
+              </a>
               <Link href="/about" className="w-full sm:w-auto">
                 <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 font-black text-base md:text-xl px-8 md:px-12 h-14 md:h-20 backdrop-blur-sm rounded-xl md:rounded-2xl transition-all hover:scale-105 active:scale-95 w-full">
                   Our Corporate Profile

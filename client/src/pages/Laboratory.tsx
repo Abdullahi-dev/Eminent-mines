@@ -111,7 +111,7 @@ export default function Laboratory() {
               We provide fast turnaround times for all standard mineral tests. Contact us today to schedule a sample submission.
             </p>
             <a 
-              href="https://wa.me/2349076929317?text=Hello%20EMRL%20Lab%20Manager%2C%20I%20would%20like%20to%20schedule%20a%20sample%20test."
+              href="https://wa.me/2348105087219?text=Hello%20Engr.%20Magaji%20of%20EMRL%2C%20I%20am%20a%20visitor%20from%20your%20website.%20I%20would%20like%20to%20schedule%20a%20mineral%20sample%20test%20at%20your%20laboratory."
               target="_blank"
               rel="noopener noreferrer"
             >

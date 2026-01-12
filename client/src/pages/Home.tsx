@@ -83,7 +83,7 @@ export default function Home() {
                 </Button>
               </Link>
               <a 
-                href="https://wa.me/2349076929317?text=Hello%20EMRL%20Founder%2C%20I%20would%20like%20to%20partner%20with%20you."
+                href="https://wa.me/2349076929317?text=Hello%20EMRL%20Founder%2C%20I%20am%20visiting%20your%20website%20and%20I%20would%20like%20to%20partner%20with%20you."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"
@@ -396,7 +396,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
               <a 
-                href="https://wa.me/2349076929317?text=Hello%20EMRL%20Founder%2C%20I%20would%20like%20to%20initiate%20a%20partnership."
+                href="https://wa.me/2349076929317?text=Hello%20EMRL%20Founder%2C%20I%20am%20visiting%20your%20website%20and%20I%20would%20like%20to%20initiate%20a%20partnership."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"

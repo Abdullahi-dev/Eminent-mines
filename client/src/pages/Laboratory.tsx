@@ -104,8 +104,7 @@ export default function Laboratory() {
              </div>
           </div>
 
-          <div className="bg-primary text-white p-12 rounded-[3rem] text-center shadow-2xl relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
+          <div className="bg-primary text-white p-12 rounded-[3rem] text-center shadow-2xl relative z-20">
             <h3 className="text-4xl font-black font-heading mb-6">Need to test your samples?</h3>
             <p className="text-white/80 max-w-2xl mx-auto mb-10 text-xl font-medium">
               We provide fast turnaround times for all standard mineral tests. Contact us today to schedule a sample submission.
@@ -115,7 +114,7 @@ export default function Laboratory() {
                 href="https://wa.me/2348105087219?text=Hello%20Engr.%20Magaji%20of%20EMRL%2C%20I%20am%20a%20visitor%20from%20your%20website.%20I%20would%20like%20to%20schedule%20a%20mineral%20sample%20test%20at%20your%20laboratory."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-primary hover:bg-zinc-100 font-black px-12 h-16 text-xl rounded-2xl shadow-xl transition-transform hover:scale-105 flex items-center justify-center min-w-[300px]"
+                className="bg-white text-primary hover:bg-zinc-100 font-black px-12 h-16 text-xl rounded-2xl shadow-xl transition-transform hover:scale-105 flex items-center justify-center min-w-[300px] cursor-pointer relative z-30"
               >
                 Contact Lab Manager
               </a>

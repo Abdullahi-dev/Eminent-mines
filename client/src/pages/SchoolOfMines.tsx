@@ -1,6 +1,3 @@
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { Button } from "@/components/ui/button";
 import { 
   CheckCircle2, 
   GraduationCap, 
@@ -12,14 +9,13 @@ import {
   Zap, 
   ArrowRight, 
   Download,
-  School,
   FileText,
   UserCheck
 } from "lucide-react";
 import { ApplicationForm } from "@/components/forms/ApplicationForm";
-import schoolImage from "@assets/generated_images/nigerian_mining_students_in_lab.png";
-import graduationImage from "@assets/generated_images/school_of_mines_students_learning.png";
-import workshopImage from "@assets/generated_images/mining_equipment_fabrication_workshop.png";
+import schoolHeroImage from "@assets/generated_images/nigerian_mining_students_in_lab.png";
+import authenticFieldImage from "@assets/WhatsApp_Image_2025-12-04_at_11.17.43_PM_1767752766336.jpeg";
+import authenticProfessionalImage from "@assets/WhatsApp_Image_2025-12-04_at_11.18.01_PM_1767759477762.jpeg";
 
 export default function SchoolOfMines() {
   return (
@@ -30,7 +26,7 @@ export default function SchoolOfMines() {
       <section className="relative min-h-[70vh] w-full overflow-hidden bg-zinc-900 flex items-center">
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${schoolImage})`, opacity: 0.4 }}
+          style={{ backgroundImage: `url(${schoolHeroImage})`, opacity: 0.4 }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-900 via-zinc-900/80 to-transparent" />
         
@@ -161,10 +157,10 @@ export default function SchoolOfMines() {
               <div className="relative z-10 space-y-8">
                 <h3 className="text-3xl font-heading font-black">Beyond the Classroom</h3>
                 <p className="text-gray-400 text-lg">
-                  Students at EMRL gain exclusive access to our active mining sites across Nigeria, participating in real-time exploration projects.
+                  Students at EMRL gain exclusive access to our active mining sites across Nigeria, participating in real-time exploration projects alongside seasoned Nigerian engineers.
                 </p>
                 <div className="aspect-video rounded-2xl overflow-hidden border border-white/10">
-                  <img src={workshopImage} alt="Hands-on training" className="w-full h-full object-cover" />
+                  <img src={authenticFieldImage} alt="Nigerian engineers in the field" className="w-full h-full object-cover" />
                 </div>
               </div>
             </section>
@@ -180,7 +176,7 @@ export default function SchoolOfMines() {
                 <h3 className="text-2xl font-black font-heading flex items-center gap-3">
                   <FileText className="h-6 w-6" /> Admissions Portal
                 </h3>
-                <p className="text-white/80 text-sm mt-2">Submit your application for the 2025 Academic Session.</p>
+                <p className="text-white/80 text-sm mt-2">Submit your comprehensive application for the 2025 Academic Session.</p>
               </div>
               <div className="p-8">
                 <ApplicationForm />
@@ -224,7 +220,7 @@ export default function SchoolOfMines() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 rounded-[3rem] overflow-hidden aspect-square shadow-2xl">
-              <img src={graduationImage} alt="Graduation ceremony" className="w-full h-full object-cover" />
+              <img src={authenticProfessionalImage} alt="Graduated Nigerian professionals" className="w-full h-full object-cover" />
             </div>
             <div className="lg:w-1/2 space-y-8">
               <h3 className="text-4xl font-heading font-black text-zinc-900 leading-tight">Your Career Starts in the Field</h3>

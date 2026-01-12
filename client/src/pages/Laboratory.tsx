@@ -110,14 +110,16 @@ export default function Laboratory() {
             <p className="text-white/80 max-w-2xl mx-auto mb-10 text-xl font-medium">
               We provide fast turnaround times for all standard mineral tests. Contact us today to schedule a sample submission.
             </p>
-            <a 
-              href="https://wa.me/2348105087219?text=Hello%20Engr.%20Magaji%20of%20EMRL%2C%20I%20am%20a%20visitor%20from%20your%20website.%20I%20would%20like%20to%20schedule%20a%20mineral%20sample%20test%20at%20your%20laboratory."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-white text-primary hover:bg-zinc-100 font-black px-12 h-16 text-xl rounded-2xl shadow-xl transition-transform hover:scale-105"
-            >
-              Contact Lab Manager
-            </a>
+            <div className="flex justify-center">
+              <a 
+                href="https://wa.me/2348105087219?text=Hello%20Engr.%20Magaji%20of%20EMRL%2C%20I%20am%20a%20visitor%20from%20your%20website.%20I%20would%20like%20to%20schedule%20a%20mineral%20sample%20test%20at%20your%20laboratory."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-primary hover:bg-zinc-100 font-black px-12 h-16 text-xl rounded-2xl shadow-xl transition-transform hover:scale-105 flex items-center justify-center min-w-[300px]"
+              >
+                Contact Lab Manager
+              </a>
+            </div>
           </div>
         </div>
       </section>

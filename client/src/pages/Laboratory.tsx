@@ -114,6 +114,7 @@ export default function Laboratory() {
               href="https://wa.me/2348105087219?text=Hello%20Engr.%20Magaji%20of%20EMRL%2C%20I%20am%20a%20visitor%20from%20your%20website.%20I%20would%20like%20to%20schedule%20a%20mineral%20sample%20test%20at%20your%20laboratory."
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-block"
             >
               <Button size="lg" className="bg-white text-primary hover:bg-zinc-100 font-black px-12 h-16 text-xl rounded-2xl shadow-xl transition-transform hover:scale-105">Contact Lab Manager</Button>
             </a>

@@ -17,8 +17,8 @@ import {
 } from "lucide-react";
 import { ApplicationForm } from "@/components/forms/ApplicationForm";
 import schoolHeroImage from "@assets/generated_images/nigerian_mining_students_in_lab.png";
-import authenticFieldImage from "@assets/image_1767796264613.png";
-import authenticProfessionalImage from "@assets/image_1767796414155.png";
+import authenticFieldImage from "@assets/generated_images/nigerian_geologists_examining_lithium_ore_outdoors.png";
+import authenticProfessionalImage from "@assets/generated_images/nigerian_mining_consultants_in_boardroom.png";
 
 export default function SchoolOfMines() {
   return (
@@ -48,10 +48,33 @@ export default function SchoolOfMines() {
             </p>
             
             <div className="flex flex-wrap gap-6">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black px-10 h-16 text-lg rounded-xl shadow-xl hover:-translate-y-1 transition-all">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 text-white font-black px-10 h-16 text-lg rounded-xl shadow-xl hover:-translate-y-1 transition-all"
+                onClick={() => {
+                  const el = document.getElementById('admission-portal');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Enroll Now <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 font-black px-10 h-16 text-lg rounded-xl backdrop-blur-sm transition-all">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-white/30 text-white hover:bg-white/10 font-black px-10 h-16 text-lg rounded-xl backdrop-blur-sm transition-all"
+                onClick={() => {
+                  const content = "EMRL SCHOOL OF MINES - ACADEMIC PROSPECTUS 2025\n\n1. MISSION\nTo develop world-class mining professionals with technical excellence.\n\n2. PROGRAMS\n- Executive Mine Management\n- Advanced Mineral Exploration\n- Operational Safety Excellence\n\n3. ADMISSIONS\nApplicants must have relevant technical background or academic qualifications (SSCE/OND/HND/BSc).\n\n4. FACILITIES\nAccess to active mining sites, ISO-certified laboratory, and GIS mapping technology.\n\nContact: admissions@emrl.com.ng";
+                  const blob = new Blob([content], { type: 'text/plain' });
+                  const url = window.URL.createObjectURL(blob);
+                  const a = document.createElement('a');
+                  a.href = url;
+                  a.download = 'EMRL_School_of_Mines_Prospectus.txt';
+                  document.body.appendChild(a);
+                  a.click();
+                  document.body.removeChild(a);
+                  window.URL.revokeObjectURL(url);
+                }}
+              >
                 Download Prospectus <Download className="ml-2 h-5 w-5" />
               </Button>
             </div>
@@ -160,10 +183,10 @@ export default function SchoolOfMines() {
               <div className="relative z-10 space-y-8">
                 <h3 className="text-3xl font-heading font-black">Beyond the Classroom</h3>
                 <p className="text-gray-400 text-lg">
-                  Students at EMRL gain exclusive access to our active mining sites across Nigeria, participating in real-time exploration projects alongside seasoned Nigerian engineers.
+                  Students at EMRL gain exclusive access to our active mining sites across Nigeria, participating in real-time exploration projects alongside seasoned Nigerian engineers wearing EMRL-branded attire.
                 </p>
                 <div className="aspect-video rounded-2xl overflow-hidden border border-white/10">
-                  <img src={authenticFieldImage} alt="Nigerian engineers in the field" className="w-full h-full object-cover" />
+                  <img src={authenticFieldImage} alt="Nigerian engineers in EMRL attire" className="w-full h-full object-cover" />
                 </div>
               </div>
             </section>
@@ -171,7 +194,7 @@ export default function SchoolOfMines() {
           </div>
 
           {/* Sidebar Area (Col 8-12) */}
-          <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-24">
+          <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-24" id="admission-portal">
             
             {/* Admission Portal Card */}
             <div className="bg-white rounded-[2.5rem] border border-zinc-200 shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden">
@@ -207,7 +230,11 @@ export default function SchoolOfMines() {
                 </div>
                 <h4 className="text-2xl font-black font-heading text-primary">Global Scholarships</h4>
                 <p className="text-sm text-gray-400">Supporting international talent with merit-based financial aid.</p>
-                <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white hover:text-zinc-900 h-14 font-black rounded-xl transition-all">
+                <Button 
+                  variant="outline" 
+                  className="w-full border-white/20 text-white hover:bg-white hover:text-zinc-900 h-14 font-black rounded-xl transition-all"
+                  onClick={() => window.open(`https://wa.me/2348105087219?text=${encodeURIComponent("Hello EMRL Admissions, I am interested in applying for financial aid for the School of Mines programs.")}`, '_blank')}
+                >
                   Apply for Aid
                 </Button>
               </div>
@@ -223,12 +250,12 @@ export default function SchoolOfMines() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 rounded-[3rem] overflow-hidden aspect-square shadow-2xl">
-              <img src={authenticProfessionalImage} alt="Graduated Nigerian professionals" className="w-full h-full object-cover" />
+              <img src={authenticProfessionalImage} alt="Nigerian professionals in EMRL attire" className="w-full h-full object-cover" />
             </div>
             <div className="lg:w-1/2 space-y-8">
               <h3 className="text-4xl font-heading font-black text-zinc-900 leading-tight">Your Career Starts in the Field</h3>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                92% of our graduates secure leadership positions within six months of completion. Join a global network of EMRL alumni operating in over 15 countries.
+                92% of our graduates secure leadership positions within six months of completion. Join a global network of EMRL alumni operating in over 15 countries, projecting Nigerian excellence to the world.
               </p>
               <div className="space-y-4">
                 {[
@@ -242,7 +269,11 @@ export default function SchoolOfMines() {
                   </div>
                 ))}
               </div>
-              <Button size="lg" className="bg-zinc-900 text-white hover:bg-zinc-800 font-black px-10 h-16 text-lg rounded-xl shadow-xl transition-all">
+              <Button 
+                size="lg" 
+                className="bg-zinc-900 text-white hover:bg-zinc-800 font-black px-10 h-16 text-lg rounded-xl shadow-xl transition-all"
+                onClick={() => window.open(`https://wa.me/2348105087219?text=${encodeURIComponent("Hello EMRL School of Mines, I would like to request more information about your academic programs.")}`, '_blank')}
+              >
                 Request Information
               </Button>
             </div>

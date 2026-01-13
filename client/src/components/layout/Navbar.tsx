@@ -17,6 +17,7 @@ export function Navbar() {
     { name: "School of Mines", href: "/school" },
     { name: "Equipment", href: "/equipment" },
     { name: "Laboratory", href: "/laboratory" },
+    { name: "Membership", href: "/membership" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -66,12 +67,12 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden xl:flex items-center space-x-6">
+        <nav className="hidden lg:flex items-center space-x-3 xl:space-x-4 2xl:space-x-6">
           {navLinks.map((link) => (
             <Link key={link.name} href={link.href}>
               <a className={cn(
-                "text-xs font-bold transition-colors hover:text-primary font-heading uppercase tracking-wide",
-                location === link.href ? "text-primary" : "text-foreground/80"
+                "text-[9px] xl:text-[10px] 2xl:text-xs font-black transition-all hover:text-primary font-heading uppercase tracking-widest",
+                location === link.href ? "text-primary border-b-2 border-primary" : "text-foreground/80 hover:-translate-y-0.5"
               )}>
                 {link.name}
               </a>
@@ -81,22 +82,23 @@ export function Navbar() {
             href="https://wa.me/2349076929317?text=Hello%20EMRL%20Founder%2C%20I%20am%20visiting%20your%20website%20and%20I%20would%20like%20to%20request%20a%20quote%20for%20your%20mining%20services."
             target="_blank"
             rel="noopener noreferrer"
+            className="ml-1 xl:ml-2"
           >
-             <Button className="bg-primary hover:bg-primary/90 text-white font-bold uppercase text-xs tracking-widest px-6">
+             <Button className="bg-zinc-900 hover:bg-primary text-white font-black uppercase text-[9px] xl:text-[10px] tracking-widest px-4 xl:px-5 h-9 xl:h-10 rounded-xl transition-all shadow-xl hover:-translate-y-1 active:scale-95">
               Get Quote
             </Button>
           </a>
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <button className="xl:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>
+        <button className="lg:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="xl:hidden border-t bg-background p-4 space-y-4 absolute w-full shadow-lg h-screen overflow-y-auto pb-20">
+        <div className="lg:hidden border-t bg-background p-4 space-y-4 absolute w-full shadow-lg h-screen overflow-y-auto pb-20">
           {navLinks.map((link) => (
             <Link key={link.name} href={link.href}>
               <a 

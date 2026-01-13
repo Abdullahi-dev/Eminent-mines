@@ -112,31 +112,81 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-zinc-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-primary font-bold uppercase tracking-widest text-sm mb-4">Leadership</h2>
-            <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">Our Executive Team</h3>
-            <p className="text-muted-foreground text-lg">Experienced professionals dedicated to advancing Nigeria's mining sector with integrity, innovation, and excellence.</p>
+          <div className="max-w-3xl mx-auto text-center mb-20">
+            <h2 className="text-primary font-black uppercase tracking-widest text-sm mb-4">The EMRL Leadership</h2>
+            <h3 className="text-4xl md:text-5xl font-heading font-black text-zinc-900 mb-6 leading-tight">Driving Innovation in Mining</h3>
+            <p className="text-zinc-600 text-lg leading-relaxed">Our multi-disciplinary executive team brings decades of combined experience in geological engineering, financial management, and operational safety to every project we undertake.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
             {teamMembers.map((member, i) => (
-              <div key={i} className="bg-white rounded-sm shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="h-80 overflow-hidden bg-zinc-200">
+              <div key={i} className="group flex flex-col items-center text-center">
+                <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden mb-8 shadow-2xl transition-all duration-500 group-hover:shadow-primary/20 group-hover:-translate-y-2">
+                  <div className="absolute inset-0 bg-zinc-900/5 transition-colors group-hover:bg-transparent" />
                   <img 
                     src={member.image} 
                     alt={member.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                   />
+                  <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <p className="text-white text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity delay-100">{member.role}</p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="text-base font-bold font-heading text-foreground mb-1 line-clamp-2">{member.name}</h4>
-                  <p className="text-xs text-primary font-bold uppercase tracking-widest mb-3">{member.title}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">{member.bio}</p>
+                <div className="space-y-3 px-2">
+                  <h4 className="text-xl font-black font-heading text-zinc-900 group-hover:text-primary transition-colors">{member.name}</h4>
+                  <p className="text-xs text-primary font-black uppercase tracking-widest">{member.title}</p>
+                  <p className="text-sm text-zinc-500 leading-relaxed font-medium line-clamp-3">{member.bio}</p>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Global Impact & Partnerships */}
+      <section className="py-24 bg-zinc-900 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -mr-64 -mt-64" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h3 className="text-3xl md:text-5xl font-heading font-black leading-tight">A Global Vision, <br /><span className="text-primary">Nigeria-Rooted.</span></h3>
+              <p className="text-zinc-400 text-lg leading-relaxed">
+                EMRL is not just a mining company; we are architects of Nigeria's industrial future. We partner with the Ministry of Mines and Steel Development (MMSD) and international investors to unlock the true value of West Africa's mineral wealth.
+              </p>
+              <div className="grid grid-cols-2 gap-8 pt-4">
+                {[
+                  { label: "State Licenses", val: "15+" },
+                  { label: "Community Projects", val: "25+" },
+                  { label: "Export Partners", val: "12" },
+                  { label: "ISO Certifications", val: "3" }
+                ].map((stat, i) => (
+                  <div key={i} className="border-l-2 border-primary pl-6">
+                    <div className="text-3xl font-black font-heading text-white">{stat.val}</div>
+                    <div className="text-xs uppercase tracking-widest text-zinc-500 font-bold">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-white/5 p-10 rounded-[3rem] border border-white/10 backdrop-blur-sm">
+              <h4 className="text-xl font-bold mb-8">Our Strategic Pillars</h4>
+              <div className="space-y-6">
+                {[
+                  { title: "Ethical Exploration", desc: "Respecting the land and its original custodians through fair compensation and land restoration." },
+                  { title: "Technical Sovereignty", desc: "Investing in Nigerian talent and indigenous technology to reduce foreign dependency." },
+                  { title: "Economic Resilience", desc: "Creating stable value chains for Nigerian minerals in the global market." }
+                ].map((pillar, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="h-2 w-2 rounded-full bg-primary mt-2 shrink-0" />
+                    <div className="space-y-1">
+                      <p className="font-bold text-white">{pillar.title}</p>
+                      <p className="text-sm text-zinc-400">{pillar.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -17,8 +17,8 @@ import {
 } from "lucide-react";
 import { ApplicationForm } from "@/components/forms/ApplicationForm";
 import schoolHeroImage from "@assets/generated_images/nigerian_mining_students_in_lab.png";
-import authenticFieldImage from "@assets/generated_images/nigerian_geologists_examining_lithium_ore_outdoors.png";
-import authenticProfessionalImage from "@assets/generated_images/nigerian_mining_consultants_in_boardroom.png";
+import beyondClassroomImage from "@assets/generated_images/nigerian_mining_students_in_training_gear.png";
+import careerFieldImage from "@assets/generated_images/nigerian_mining_experts_in_high-tech_facility.png";
 
 export default function SchoolOfMines() {
   return (
@@ -186,7 +186,7 @@ export default function SchoolOfMines() {
                   Students at EMRL gain exclusive access to our active mining sites across Nigeria, participating in real-time exploration projects alongside seasoned Nigerian engineers wearing EMRL-branded attire.
                 </p>
                 <div className="aspect-video rounded-2xl overflow-hidden border border-white/10">
-                  <img src={authenticFieldImage} alt="Nigerian engineers in EMRL attire" className="w-full h-full object-cover" />
+                  <img src={beyondClassroomImage} alt="Nigerian students in field training" className="w-full h-full object-cover" />
                 </div>
               </div>
             </section>
@@ -250,7 +250,7 @@ export default function SchoolOfMines() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 rounded-[3rem] overflow-hidden aspect-square shadow-2xl">
-              <img src={authenticProfessionalImage} alt="Nigerian professionals in EMRL attire" className="w-full h-full object-cover" />
+              <img src={careerFieldImage} alt="EMRL Nigerian professionals" className="w-full h-full object-cover" />
             </div>
             <div className="lg:w-1/2 space-y-8">
               <h3 className="text-4xl font-heading font-black text-zinc-900 leading-tight">Your Career Starts in the Field</h3>

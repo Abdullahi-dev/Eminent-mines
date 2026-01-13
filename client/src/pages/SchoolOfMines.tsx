@@ -1,3 +1,6 @@
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { Button } from "@/components/ui/button";
 import { 
   CheckCircle2, 
   GraduationCap, 
@@ -14,8 +17,8 @@ import {
 } from "lucide-react";
 import { ApplicationForm } from "@/components/forms/ApplicationForm";
 import schoolHeroImage from "@assets/generated_images/nigerian_mining_students_in_lab.png";
-import authenticFieldImage from "@assets/WhatsApp_Image_2025-12-04_at_11.17.43_PM_1767752766336.jpeg";
-import authenticProfessionalImage from "@assets/WhatsApp_Image_2025-12-04_at_11.18.01_PM_1767759477762.jpeg";
+import authenticFieldImage from "@assets/image_1767796264613.png";
+import authenticProfessionalImage from "@assets/image_1767796414155.png";
 
 export default function SchoolOfMines() {
   return (

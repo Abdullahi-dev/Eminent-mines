@@ -29,9 +29,19 @@ export function BookingForm() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast.success("Booking Request Sent", {
-      description: "Our logistics team will confirm availability shortly.",
+    const message = `Hello EMRL Equipment Manager, I am visiting your website and I would like to book the following equipment:
+- Company: ${values.companyName}
+- Contact: ${values.contactPerson}
+- Equipment: ${values.equipmentType}
+- Duration: ${values.duration}
+- Start Date: ${format(values.startDate, "PPP")}
+
+Please provide a quote.`;
+    
+    window.open(`https://wa.me/2349076929317?text=${encodeURIComponent(message)}`, '_blank');
+    
+    toast.success("Booking Request Initiated", {
+      description: "Redirecting to WhatsApp to complete your request.",
     });
     form.reset();
   }

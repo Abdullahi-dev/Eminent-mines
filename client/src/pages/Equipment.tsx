@@ -1,14 +1,13 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Truck, Wrench, Calendar, AlertCircle } from "lucide-react";
+import { Truck, Wrench, Calendar, AlertCircle, Pickaxe } from "lucide-react";
 import fleetImage from "@assets/generated_images/mining_equipment_rental_fleet.png";
 import { BookingForm } from "@/components/forms/BookingForm";
 
 import projectImage2 from "@assets/WhatsApp_Image_2025-12-04_at_11.18.01_PM_1767759477762.jpeg";
 import projectImage3 from "@assets/WhatsApp_Image_2025-12-04_at_11.17.38_PM_1767752872774.jpeg";
 import drillingRigImage from "@assets/generated_images/borehole_drilling_rig_operation.png";
-import machineryWorkshopImage from "@assets/image_1767763709253.png";
 import heavyFleetImage from "@assets/image_1767763727146.png";
 import dumpTruckImage from "@assets/generated_images/mineral_export_loading_operation.png";
 import compressorImage from "@assets/generated_images/mining_equipment_fabrication_workshop.png";
@@ -79,6 +78,26 @@ export default function Equipment() {
                     All our rentals come with on-site maintenance support. If a machine breaks down, we replace or repair it within 24 hours to minimize downtime.
                   </p>
                 </div>
+              </div>
+            </div>
+
+            <div className="bg-zinc-900 p-12 md:p-16 rounded-[3rem] text-white relative overflow-hidden group shadow-2xl border border-white/10">
+              <div className="absolute inset-0 bg-primary/5 transition-colors group-hover:bg-primary/10" />
+              <div className="relative z-10 space-y-8 text-center">
+                <div className="h-20 w-20 bg-white/10 rounded-3xl flex items-center justify-center mx-auto mb-8">
+                  <Pickaxe className="h-10 w-10 text-primary" />
+                </div>
+                <h4 className="text-3xl font-black font-heading">Ready to Lease?</h4>
+                <p className="text-zinc-400 font-medium leading-relaxed">
+                  Our machinery experts are ready to provide you with the right equipment for your project.
+                </p>
+                <Button 
+                  size="lg" 
+                  className="w-full bg-primary hover:bg-primary/90 text-white font-black text-lg h-16 rounded-2xl shadow-2xl transition-all hover:-translate-y-1 active:scale-95"
+                  onClick={() => window.open(`https://wa.me/2349076929317?text=${encodeURIComponent("Hello EMRL Equipment Manager, I am visiting your website and I would like to request a quote for equipment leasing.")}`, '_blank')}
+                >
+                  Request a Quote
+                </Button>
               </div>
             </div>
           </div>

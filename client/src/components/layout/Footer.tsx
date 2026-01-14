@@ -143,14 +143,14 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <span>
-                  +234 907 692 9317<br />
-                  +234 906 726 3066<br />
-                  +234 706 255 5819
+                  <a href="tel:+2349076929317" className="hover:text-white transition-colors">+234 907 692 9317</a><br />
+                  <a href="tel:+2349067263066" className="hover:text-white transition-colors">+234 906 726 3066</a><br />
+                  <a href="tel:+2347062555819" className="hover:text-white transition-colors">+234 706 255 5819</a>
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                <span>info@emrl.com</span>
+                <a href="mailto:info@emrl.com" className="hover:text-white transition-colors">info@emrl.com</a>
               </li>
             </ul>
 

@@ -78,7 +78,7 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4 md:pt-6">
               <Link href="/services" className="w-full sm:w-auto">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-base md:text-lg px-6 md:px-10 h-14 md:h-16 rounded-sm shadow-xl hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 group w-full">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black text-base md:text-lg px-6 md:px-10 h-14 md:h-16 rounded-sm shadow-xl hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 group w-full uppercase tracking-widest">
                   Explore Solutions <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
@@ -88,7 +88,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"
               >
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 font-bold text-base md:text-lg px-6 md:px-10 h-14 md:h-16 backdrop-blur-sm rounded-sm hover:-translate-y-1 transition-all duration-300 w-full">
+                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 font-black text-base md:text-lg px-6 md:px-10 h-14 md:h-16 backdrop-blur-sm rounded-sm hover:-translate-y-1 transition-all duration-300 w-full uppercase tracking-widest">
                   Partner With Us
                 </Button>
               </a>

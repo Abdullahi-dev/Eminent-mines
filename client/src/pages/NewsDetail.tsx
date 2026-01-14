@@ -69,6 +69,22 @@ Attended by institutional investors from London, New York, and Hong Kong, the fo
 The forum resulted in several Memorandums of Understanding (MoUs) for strategic partnerships in mineral processing and value addition. This shift from raw ore export to domestic processing is a key component of EMRL's long-term strategy, aligned with the Federal Government's industrialization goals.
 
 Investors praised EMRL's adherence to international ESG (Environmental, Social, and Governance) standards, noting that our transparent reporting and community engagement models significantly de-risk large-scale capital deployment in the region.`
+  },
+  "mineral-tech": {
+    title: "Advancements in Mineral Analysis Technology",
+    date: "Sep 15, 2025",
+    category: "Technology",
+    author: "EMRL Lab Manager",
+    img: "/attached_assets/generated_images/mineral_testing_laboratory.png",
+    content: `Precision is the currency of trust in the mining industry. At Eminent Mines Resources Limited (EMRL), we are continuously investing in the latest analytical technologies to ensure that our clients and partners receive the most accurate data possible. Our laboratory division has recently integrated next-generation X-Ray Fluorescence (XRF) and X-Ray Diffraction (XRD) systems, representing a significant leap forward in our mineral quantification capabilities.
+
+This new technology allows for non-destructive, high-precision analysis of base metals, rare earth elements, and industrial minerals with detection limits that were previously unattainable in a commercial setting. The integration of these systems into our workflow has reduced turnaround times by 40% while simultaneously increasing the statistical confidence of our geochemical assays.
+
+"In a market where mineral grades can fluctuate by small margins, the ability to provide definitive, bankable data is what sets EMRL apart," notes our Senior Lab Technologist. "Our new systems are calibrated to international standards, ensuring that an EMRL assay report is respected by traders and smelters globally."
+
+The technological upgrade also includes advanced data management software that integrates directly with our geological modeling tools. This creates a seamless "Pit-to-Port" data chain, allowing for real-time adjustments to mining plans based on laboratory-verified grade control samples. This level of technical integration is a key component of our strategy to minimize waste and maximize the recovery of Nigeria's valuable mineral resources.
+
+Furthermore, we are expanding our environmental testing capabilities. The new laboratory equipment is capable of detecting trace elements in soil and water samples at parts-per-billion (ppb) levels. This ensures that our operations—and those of our consultancy clients—adhere to the highest standards of environmental compliance and groundwater protection.`
   }
 };
 
@@ -141,17 +157,6 @@ export default function NewsDetail() {
                 {paragraph}
               </p>
             ))}
-          </div>
-
-          <div className="mt-16 pt-12 border-t border-zinc-100">
-            <div className="bg-zinc-50 rounded-3xl p-8 text-center">
-              <h3 className="text-2xl font-bold text-zinc-900 mb-4">Enjoying our insights?</h3>
-              <p className="text-zinc-600 mb-8 max-w-md mx-auto">Subscribe to our newsletter for the latest updates on Nigerian mining and EMRL projects.</p>
-              <div className="flex gap-2 max-w-sm mx-auto">
-                <input type="email" placeholder="Your email address" className="flex-grow rounded-full px-6 py-3 border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-primary/20" />
-                <button className="bg-primary text-white font-bold px-8 py-3 rounded-full hover:bg-primary/90 transition-all">Join</button>
-              </div>
-            </div>
           </div>
         </div>
       </main>

@@ -142,9 +142,13 @@ export default function News() {
                       <span className="px-3 py-1 bg-primary/10 rounded-full">{article.category}</span>
                       <span className="text-zinc-400">{article.date}</span>
                     </div>
-                    <h3 className="text-2xl font-black text-zinc-900 group-hover:text-primary transition-colors leading-tight">
-                      {article.title}
-                    </h3>
+                    <Link href={`/news/${article.id}`}>
+                      <a className="block">
+                        <h3 className="text-2xl font-black text-zinc-900 group-hover:text-primary transition-colors leading-tight">
+                          {article.title}
+                        </h3>
+                      </a>
+                    </Link>
                     <p className="text-zinc-600 text-sm leading-relaxed font-medium line-clamp-3">
                       {article.excerpt}
                     </p>

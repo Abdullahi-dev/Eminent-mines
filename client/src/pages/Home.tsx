@@ -324,7 +324,7 @@ export default function Home() {
               </h3>
             </div>
             <Link href="/news">
-              <Button variant="outline" className="border-zinc-200 hover:border-primary font-bold h-12 px-6 rounded-xl">
+              <Button variant="outline" className="border-zinc-200 hover:border-primary font-bold h-12 px-6 rounded-xl transition-all hover:scale-105 active:scale-95">
                 View All Updates <Newspaper className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -337,6 +337,7 @@ export default function Home() {
                 date: "Oct 24, 2025",
                 category: "Industry News",
                 img: lithiumFieldImage,
+                link: "/news/lithium-revolution",
                 excerpt: "EMRL's latest exploration results show record-high purity in our new lithium prospects..."
               },
               {
@@ -344,6 +345,7 @@ export default function Home() {
                 date: "Oct 12, 2025",
                 category: "Sustainability",
                 img: communityProjectImage,
+                link: "/news/sustainable-mining",
                 excerpt: "Our new 'School of Mines' initiative is transforming local community engagement..."
               },
               {
@@ -351,33 +353,35 @@ export default function Home() {
                 date: "Sep 28, 2025",
                 category: "Investor Relations",
                 img: investorForumImage,
+                link: "/news/global-investment",
                 excerpt: "Join EMRL at the upcoming mining forum to discuss strategic mineral partnerships..."
               }
             ].map((item, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group cursor-pointer"
-              >
-                <div className="relative h-64 rounded-3xl overflow-hidden mb-6">
-                  <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
-                    {item.category}
+              <Link key={i} href={item.link}>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group cursor-pointer bg-zinc-50 p-4 rounded-[2.5rem] border border-transparent hover:border-primary/30 transition-all hover:shadow-2xl"
+                >
+                  <div className="relative h-64 rounded-3xl overflow-hidden mb-6">
+                    <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                      {item.category}
+                    </div>
                   </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="text-zinc-400 text-sm font-bold">{item.date}</div>
-                  <h4 className="text-xl font-black text-zinc-900 group-hover:text-primary transition-colors leading-tight">
-                    {item.title}
-                  </h4>
-                  <p className="text-zinc-600 line-clamp-2 text-sm leading-relaxed">
-                    {item.excerpt}
-                  </p>
-                </div>
-              </motion.div>
+                  <div className="space-y-3 px-2">
+                    <div className="text-zinc-400 text-sm font-bold">{item.date}</div>
+                    <h4 className="text-xl font-black text-zinc-900 group-hover:text-primary transition-colors leading-tight">
+                      {item.title}
+                    </h4>
+                    <p className="text-zinc-600 line-clamp-2 text-sm leading-relaxed">
+                      {item.excerpt}
+                    </p>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>

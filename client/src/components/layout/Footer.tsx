@@ -1,8 +1,44 @@
 import { Link } from "wouter";
-import { Facebook, Twitter, Linkedin, Instagram, MapPin, Phone, Mail, ChevronRight, Youtube, Music } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, MapPin, Phone, Mail, ChevronRight, Youtube, Music, Send } from "lucide-react";
 import logo from "@assets/eminent_logo_mining_colors_1764979052205.png";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+
+  const subscribeMutation = useMutation({
+    mutationFn: async (email: string) => {
+      return await apiRequest("POST", "/api/newsletter/subscribe", { email });
+    },
+    onSuccess: () => {
+      toast({
+        title: "Success!",
+        description: "You've been added to our newsletter.",
+      });
+      setEmail("");
+    },
+    onError: () => {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      subscribeMutation.mutate(email);
+    }
+  };
+
   const socialLinks = [
     { Icon: Facebook, href: "https://web.facebook.com/profile.php?id=100084362835491", label: "Facebook" },
     { Icon: Twitter, href: "https://x.com/Eminentmines", label: "Twitter" },
@@ -95,7 +131,7 @@ export function Footer() {
           {/* Contact Info */}
           <div>
             <h3 className="font-heading font-bold text-lg mb-6 text-primary">Contact Us</h3>
-            <ul className="space-y-4 text-sm text-gray-400">
+            <ul className="space-y-4 text-sm text-gray-400 mb-8">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <span>
@@ -117,6 +153,26 @@ export function Footer() {
                 <span>info@emrl.com</span>
               </li>
             </ul>
+
+            <h3 className="font-heading font-bold text-lg mb-4 text-primary">Newsletter</h3>
+            <form onSubmit={handleSubscribe} className="flex gap-2">
+              <Input
+                type="email"
+                placeholder="Email address"
+                className="bg-white/5 border-white/10 text-white h-10 text-xs focus-visible:ring-primary"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <Button 
+                type="submit" 
+                size="icon" 
+                className="bg-primary hover:bg-primary/90 shrink-0"
+                disabled={subscribeMutation.isPending}
+              >
+                <Send className="h-4 w-4" />
+              </Button>
+            </form>
           </div>
         </div>
 

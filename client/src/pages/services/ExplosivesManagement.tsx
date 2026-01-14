@@ -4,35 +4,34 @@ import heroImage from "@assets/generated_images/cinematic_modern_mining_site_her
 export default function ExplosivesManagement() {
   return (
     <ServiceLayout
-      title="Explosives Management & Mining Magazine Services"
-      subtitle="Secure and compliant solutions for storage, handling, and management of mining explosives."
+      title="Explosives Management"
+      subtitle="Secure, compliant, and professional blasting solutions for industrial mining."
       heroImage={heroImage}
-      overview="EMRL operates a secure, regulated, and fully compliant mining magazine facility for storing and managing explosives used in blasting operations. We provide comprehensive explosive management services including licensed storage, inventory control, safe transportation, and supply of blasting accessories, all in compliance with Nigeria's Explosives Act and global blasting standards."
+      overview="EMRL operates a high-security mining magazine facility, providing end-to-end explosive management services. We handle everything from government-approved storage and inventory tracking to precision field blasting and regulatory permit procurement, ensuring 100% compliance with Nigeria's Explosives Act."
       features={[
-        "Licensed Mining Magazine (Explosives Depot)",
-        "Secure Storage of Explosives & Accessories",
-        "Explosive Inventory Management & Tracking",
-        "Safe Explosive Transportation Services",
-        "Supply of Blasting Accessories",
-        "Explosives Safety & Compliance Training"
+        "Secure Licensed Mining Magazine (Storage Depot)",
+        "Precision Controlled Blasting Services",
+        "Real-Time Explosive Inventory Management",
+        "Safe & Escorted Explosives Transportation",
+        "Supply of High-Quality Detonators & ANFO",
+        "MMSD & Police EOD Regulatory Support"
       ]}
       whyChooseUs={[
-        { title: "Licensed Facility", desc: "Purpose-built, secure magazine compliant with all regulatory requirements." },
-        { title: "Digital Tracking", desc: "Complete inventory control with intake, withdrawal, and authorization logs." },
-        { title: "Expert Team", desc: "Trained personnel certified in explosive handling and safety management." },
-        { title: "Regulatory Excellence", desc: "100% compliance with Nigeria's Explosives Act and federal standards." }
+        { title: "Maximum Security", desc: "Fortified storage facility with 24/7 surveillance and government escort." },
+        { title: "Blasting Precision", desc: "Optimized patterns that reduce fly-rock and vibration impact." },
+        { title: "Full Compliance", desc: "Certified by Ministry of Mines, Nigeria Police EOD, and DSS." },
+        { title: "Integrated Supply", desc: "One-stop shop for both storage and blasting accessories." }
       ]}
       methodology={[
-        { title: "Facility Security", desc: "Purpose-built, fortified storage facility for all classes of explosives." },
-        { title: "Inventory Control", desc: "Digitized tracking of stock intake, withdrawals, daily logs, and personnel authorization." },
-        { title: "Safe Transportation", desc: "Escort-secured and government-approved movement of explosives to mining sites." },
-        { title: "Regulatory Support", desc: "Assistance in obtaining approvals from Ministry of Mines, Nigeria Police EOD, Federal Ministry of Environment, SSS, and Civil Defence." }
+        { title: "Magazine Intake", desc: "Digital logging and secure warehousing of explosive materials." },
+        { title: "Operational Planning", desc: "Pre-blast surveys and technical design for safety and efficiency." },
+        { title: "Secured Transport", desc: "Movement of materials from magazine to site under strict security." },
+        { title: "Blast Execution", desc: "Professional detonation followed by post-blast fumes and vibration check." }
       ]}
       faqs={[
-        { question: "What explosives do you store?", answer: "We store all approved mining explosives including dynamites, cordtex, gelatin, ANFO, and detonators." },
-        { question: "Do you offer blasting training?", answer: "Yes, we provide comprehensive safety training for blasters, supervisors, and field operators." },
-        { question: "How is safety ensured?", answer: "We maintain strict security protocols, regular inspections, and full compliance with Nigeria's Explosives Act." },
-        { question: "Can you supply blasting materials?", answer: "Yes, we supply high-quality detonators, cordtex, boosters, ANFO, safety fuses, and electric detonators." }
+        { question: "What explosives are you licensed to store?", answer: "We store all classes of industrial explosives including Dynamites, ANFO, and electrical/non-electrical detonators." },
+        { question: "Do you provide blasting accessories?", answer: "Yes, we supply cordtex, boosters, safety fuses, and other essential blasting accessories." },
+        { question: "How is regulatory compliance handled?", answer: "We manage all permits from the Ministry of Mines, Nigeria Police Force (EOD), and other security agencies for our clients." }
       ]}
     />
   );

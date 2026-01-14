@@ -4,33 +4,34 @@ import heroImage from "@assets/generated_images/nigerian_mining_consultants_in_b
 export default function MiningConsultancy() {
   return (
     <ServiceLayout
-      title="Mining Consultancy & General Contracting"
-      subtitle="Strategic support and professional guidance for the mining sector."
+      title="Mining Consultancy"
+      subtitle="Strategic advisory and regulatory navigation for Nigeria's mining sector."
       heroImage={heroImage}
-      overview="We provide strategic support, professional guidance and general contracting services that enable individuals and businesses to navigate the mining sector effortlessly. From licensing to community relations, we handle the complexities of mining business."
+      overview="EMRL provides top-tier consultancy services for investors, mining companies, and government agencies. We specialize in navigating the complex regulatory landscape of the Nigerian Ministry of Mines and Steel Development (MMSD), ensuring that your projects are compliant, bankable, and strategically positioned for success."
       features={[
-        "Mining Consultancy & Advisory",
-        "License & Permit Advisory",
-        "Regulatory Compliance & Documentation",
-        "Environmental & Community Impact Support",
-        "General Contracting for Mining Projects"
+        "MMSD Regulatory Compliance & Licensing (EL, ML, QL)",
+        "Bankable Feasibility Studies (BFS) & Technical Audits",
+        "Environmental Impact Assessments (EIA) & CDAs",
+        "Mineral Investment Advisory & Market Entry Strategy",
+        "Mine Closure Planning & Reclamation Strategy",
+        "Community Relations & Conflict Resolution Advisory"
       ]}
       whyChooseUs={[
-        { title: "Knowledge", desc: "Deep understanding of Nigerian mining regulations." },
-        { title: "Network", desc: "Strong relationships with regulatory bodies." },
-        { title: "Transparency", desc: "Fast, reliable and transparent consultancy services." },
-        { title: "Holistic", desc: "Support for both startups and established mining companies." }
+        { title: "Regulatory Insight", desc: "Unrivaled understanding of Nigerian mining laws and administrative processes." },
+        { title: "Technical Integrity", desc: "Reports backed by registered engineers and geoscientists." },
+        { title: "Risk Mitigation", desc: "Proactive identification of environmental and social risks." },
+        { title: "Strategic Network", desc: "Direct connections with industry regulators and institutional investors." }
       ]}
       methodology={[
-        { title: "Assessment", desc: "Reviewing project status and regulatory requirements." },
-        { title: "Strategy", desc: "Developing a roadmap for compliance and operations." },
-        { title: "Execution", desc: "Handling documentation, filings, and negotiations." },
-        { title: "Monitoring", desc: "Ongoing support to ensure continued compliance." }
+        { title: "Diagnostic Review", desc: "Analyzing current permits, technical data, and project status." },
+        { title: "Strategic Roadmap", desc: "Developing a step-by-step path for licensing and compliance." },
+        { title: "Execution & Filing", desc: "Professional preparation and submission of all technical documents." },
+        { title: "Monitoring", desc: "Ongoing support to ensure long-term regulatory standing." }
       ]}
       faqs={[
-        { question: "Can you help get a mining lease?", answer: "Yes, we assist with securing Exploration Licenses, Mining Leases, and Quarry Leases." },
-        { question: "Do you handle community agreements?", answer: "Yes, we facilitate Community Development Agreements (CDA) required by law." },
-        { question: "Do you offer feasibility studies?", answer: "Yes, we conduct full technical and economic feasibility studies." }
+        { question: "Can you help with Mining Lease applications?", answer: "Yes, we handle the entire process from initial exploration license conversion to final Mining Lease issuance." },
+        { question: "What is a CDA?", answer: "A Community Development Agreement (CDA) is a mandatory document in Nigeria ensuring local communities benefit from mining projects. We specialize in negotiating and drafting these." },
+        { question: "Do you provide technical audits?", answer: "Yes, we conduct comprehensive technical and financial audits for existing mining operations to identify areas for optimization." }
       ]}
     />
   );

@@ -109,14 +109,6 @@ export function Navbar() {
               </a>
             </Link>
           ))}
-          <Link href="/membership">
-            <a 
-              className="block text-sm font-medium py-3 hover:text-primary border-b border-border/50 text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Membership Portal
-            </a>
-          </Link>
           <a 
             href="https://wa.me/2349076929317?text=Hello%20EMRL%20Founder%2C%20I%20am%20visiting%20your%20website%20and%20I%20would%20like%20to%20request%20a%20quote%20for%20your%20mining%20services."
             target="_blank"

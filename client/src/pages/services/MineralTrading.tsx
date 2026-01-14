@@ -5,32 +5,33 @@ export default function MineralTrading() {
   return (
     <ServiceLayout
       title="Mineral Trading & Supply"
-      subtitle="Sourcing, processing and export of Nigeria's finest solid minerals."
+      subtitle="Bridging the gap between Nigerian mineral wealth and global industrial demand."
       heroImage={heroImage}
-      overview="Eminent Mines Resources Ltd engages in the large-scale sourcing, processing and export of Nigeria’s finest solid minerals to both local and international buyers. We ensure all our products meet international purity standards."
+      overview="EMRL is a licensed mineral trading powerhouse, specializing in the ethical sourcing and global export of high-grade solid minerals. We operate a sophisticated value chain that ensures transparency, quality compliance, and reliable supply for international off-takers and local industries."
       features={[
-        "Trading of Lead, Zinc, Lithium, Kaolin, Feldspar, Quartz, Mica, Gold",
-        "Bulk supply for local industries",
-        "International mineral export services",
-        "Verified sourcing from licensed mining locations",
-        "Quality testing/documentation for export readiness"
+        "Ethical Sourcing of Lead, Zinc, Lithium, and Gold",
+        "Standardized Mineral Beneficiation & Processing",
+        "Comprehensive Export Documentation (NXP, CO, CCVO)",
+        "End-to-End Logistics & Freight Management",
+        "Strategic Warehousing & Stockpile Management",
+        "Market Intelligence & Price Advisory Services"
       ]}
       whyChooseUs={[
-        { title: "Trust", desc: "Trusted supplier to major industries and exporters." },
-        { title: "Quality", desc: "High purity minerals with documented lab analysis." },
-        { title: "Logistics", desc: "Reliable logistics & timely delivery network." },
-        { title: "Compliance", desc: "Fully licensed for export with all necessary permits." }
+        { title: "Quality Control", desc: "Rigorous lab testing for purity and moisture content at our EMRL Lab." },
+        { title: "Reliability", desc: "Stable supply chains backed by our own mining operations." },
+        { title: "Global Network", desc: "Established relationships with shipping lines and international smelters." },
+        { title: "Transparency", desc: "Ethical sourcing practices that meet international ESG standards." }
       ]}
       methodology={[
-        { title: "Sourcing", desc: "Direct procurement from our mines or partner sites." },
-        { title: "Processing", desc: "Cleaning, crushing, and sorting to meet buyer specs." },
-        { title: "Testing", desc: "Laboratory analysis to certify grade and purity." },
-        { title: "Logistics", desc: "Packaging, loading, and transport to port or factory." }
+        { title: "Sourcing & QC", desc: "Primary sourcing from certified pits followed by immediate grade analysis." },
+        { title: "Processing", desc: "Crushing, sorting, and packaging to meet specific client mesh sizes." },
+        { title: "Documentation", desc: "Handling all MMSD permits, customs clearance, and export financing." },
+        { title: "Execution", desc: "Seamless delivery via ocean freight or local haulage to industrial hubs." }
       ]}
       faqs={[
-        { question: "What is your minimum order quantity?", answer: "We typically handle bulk orders starting from 30 tons (one truckload)." },
-        { question: "Do you export internationally?", answer: "Yes, we have experience exporting to China, Europe, and the Americas." },
-        { question: "Can I get samples?", answer: "Yes, we provide samples for testing upon request." }
+        { question: "What minerals do you currently export?", answer: "We primarily trade in high-grade Lithium ore, Lead ore, Zinc ore, and Gold dore bars." },
+        { question: "Do you handle local supply within Nigeria?", answer: "Yes, we supply minerals in bulk to local manufacturing and processing industries across Nigeria." },
+        { question: "Are your minerals ethically sourced?", answer: "Absolutely. We ensure all our minerals are traceable and sourced in compliance with child-labor-free and environmentally conscious laws." }
       ]}
     />
   );

@@ -4,32 +4,34 @@ import heroImage from "@assets/generated_images/mining_equipment_fabrication_wor
 export default function MiningMachinery() {
   return (
     <ServiceLayout
-      title="Mining Machinery & Fabrication"
-      subtitle="Design, fabrication and leasing of high-quality mining equipment."
+      title="Machinery & Equipment"
+      subtitle="Engineering high-performance mining equipment and industrial fabrication solutions."
       heroImage={heroImage}
-      overview="We design and fabricate high-quality mining machinery, tools and industrial equipment tailored to the needs of mining, construction and processing companies. We also offer a robust fleet of heavy machinery for lease."
+      overview="EMRL's machinery division specializes in the fabrication, installation, and maintenance of heavy-duty mining equipment. From custom-built crushers to large-scale milling plants, we provide the technical infrastructure that powers Nigeria's industrial extraction sector."
       features={[
-        "Fabrication of Mineral Processing Machinery (Crushers, Mills)",
-        "Equipment Leasing & Rentals (Excavators, Loaders, Rigs)",
-        "Maintenance & Repair Services",
-        "Custom Fabrication Solutions"
+        "Custom Fabrication of Primary & Secondary Crushers",
+        "Installation of Ball Mills & Mineral Processing Plants",
+        "Heavy Equipment Leasing (Excavators, Dozers, Rigs)",
+        "Preventive Maintenance & Field Repair Services",
+        "Design of Conveyor Systems & Vibrating Screens",
+        "Spare Parts Procurement & Supply Chain Support"
       ]}
       whyChooseUs={[
-        { title: "Engineering", desc: "Strong engineering expertise and design capability." },
-        { title: "Durability", desc: "Durable fabrication with premium materials." },
-        { title: "Flexibility", desc: "Affordable leasing & maintenance packages." },
-        { title: "Support", desc: "On-site technical support for leased equipment." }
+        { title: "Local Fabrication", desc: "Reducing costs and lead times through indigenous engineering." },
+        { title: "Reliability", desc: "Robust designs tested in the harshest Nigerian mining terrains." },
+        { title: "Technical Support", desc: "On-site maintenance teams available for rapid response." },
+        { title: "Versatility", desc: "Equipment solutions tailored for both small-scale and industrial miners." }
       ]}
       methodology={[
-        { title: "Consultation", desc: "Understanding your operational needs and capacity." },
-        { title: "Design/Selection", desc: "Designing custom machinery or selecting the right rental unit." },
-        { title: "Fabrication/Prep", desc: "Manufacturing or servicing the equipment for deployment." },
-        { title: "Commissioning", desc: "Installation and operator training on site." }
+        { title: "Needs Analysis", desc: "Evaluating tonnage requirements and material hardness for optimal design." },
+        { title: "Engineering Design", desc: "CAD-based modeling and structural stress analysis." },
+        { title: "Fabrication & QC", desc: "Precision welding and assembly using industrial-grade steel." },
+        { title: "Deployment", desc: "On-site installation, calibration, and operator training." }
       ]}
       faqs={[
-        { question: "Do you build custom crushers?", answer: "Yes, we design crushers tailored to the specific hardness of your rock." },
-        { question: "What rental terms do you offer?", answer: "We offer daily, weekly, and monthly rental terms." },
-        { question: "Do you provide operators?", answer: "Yes, our rentals come with experienced operators." }
+        { question: "Do you offer equipment on lease?", answer: "Yes, we have a diverse fleet of excavators, drilling rigs, and payloaders available for short and long-term lease." },
+        { question: "Can you build custom-sized crushers?", answer: "Absolutely. We fabricate crushers and mills based on your specific output requirements (Tons Per Hour)." },
+        { question: "Do you provide on-site repairs?", answer: "Yes, our mobile technical team provides 24/7 support for critical machinery breakdowns at the mine site." }
       ]}
     />
   );

@@ -75,7 +75,7 @@ Investors praised EMRL's adherence to international ESG (Environmental, Social, 
     date: "Sep 15, 2025",
     category: "Technology",
     author: "EMRL Lab Manager",
-    img: "/attached_assets/generated_images/mineral_testing_laboratory.png",
+    img: mineralTestingImage,
     content: `Precision is the currency of trust in the mining industry. At Eminent Mines Resources Limited (EMRL), we are continuously investing in the latest analytical technologies to ensure that our clients and partners receive the most accurate data possible. Our laboratory division has recently integrated next-generation X-Ray Fluorescence (XRF) and X-Ray Diffraction (XRD) systems, representing a significant leap forward in our mineral quantification capabilities.
 
 This new technology allows for non-destructive, high-precision analysis of base metals, rare earth elements, and industrial minerals with detection limits that were previously unattainable in a commercial setting. The integration of these systems into our workflow has reduced turnaround times by 40% while simultaneously increasing the statistical confidence of our geochemical assays.

@@ -7,10 +7,13 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import lithiumFieldImage from "@assets/generated_images/nigerian_geologists_examining_lithium_ore_outdoors.png";
-import communityProjectImage from "@assets/generated_images/community_development_project_in_mining_area.png";
-import investorForumImage from "@assets/generated_images/nigerian_mining_investment_forum_scene.png";
-import mineralTestingImage from "@assets/generated_images/mineral_testing_laboratory.png";
+import lithiumFieldImage from "@assets/generated_images/nigerian_geologists_examining_mineral_ore.png";
+import communityProjectImage from "@assets/generated_images/community_development_in_nigerian_village.png";
+import investorForumImage from "@assets/generated_images/nigerian_mining_investment_forum_presentation.png";
+import mineralTestingImage from "@assets/generated_images/advanced_mineral_testing_lab_nigeria.png";
+import graduationImage from "@assets/generated_images/mining_school_graduation_ceremony_nigeria.png";
+import discoveryImage from "@assets/generated_images/tantalum_mineral_discovery_nigeria.png";
+import reforestationImage from "@assets/generated_images/tree_planting_reforestation_nigeria.png";
 
 const articles = [
   {
@@ -60,7 +63,7 @@ const articles = [
     date: "August 25, 2025",
     author: "HR Department",
     category: "Sustainability",
-    image: communityProjectImage,
+    image: graduationImage,
     tags: ["Education", "Graduation", "Skills"]
   },
   {
@@ -70,7 +73,7 @@ const articles = [
     date: "August 10, 2025",
     author: "Chief Geologist",
     category: "Industry News",
-    image: lithiumFieldImage,
+    image: discoveryImage,
     tags: ["Tantalum", "Discovery", "Critical Minerals"]
   },
   {
@@ -80,7 +83,7 @@ const articles = [
     date: "July 28, 2025",
     author: "Environmental Team",
     category: "Sustainability",
-    image: communityProjectImage,
+    image: reforestationImage,
     tags: ["Environment", "Reforestation", "Sustainability"]
   }
 ];

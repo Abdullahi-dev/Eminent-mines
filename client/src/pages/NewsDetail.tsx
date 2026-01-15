@@ -4,10 +4,13 @@ import { useRoute } from "wouter";
 import { motion } from "framer-motion";
 import { Calendar, User, ArrowLeft, Share2, MessageSquare } from "lucide-react";
 import { Link } from "wouter";
-import lithiumFieldImage from "@assets/WhatsApp_Image_2025-12-04_at_11.17.41_PM_1767759299456.jpeg";
-import communityProjectImage from "@assets/image_1767761769382.png";
-import investorForumImage from "@assets/generated_images/nigerian_mining_investment_forum_scene.png";
-import mineralTestingImage from "@assets/generated_images/mineral_testing_laboratory.png";
+import lithiumFieldImage from "@assets/generated_images/nigerian_geologists_examining_mineral_ore.png";
+import communityProjectImage from "@assets/generated_images/community_development_in_nigerian_village.png";
+import investorForumImage from "@assets/generated_images/nigerian_mining_investment_forum_presentation.png";
+import mineralTestingImage from "@assets/generated_images/advanced_mineral_testing_lab_nigeria.png";
+import graduationImage from "@assets/generated_images/mining_school_graduation_ceremony_nigeria.png";
+import discoveryImage from "@assets/generated_images/tantalum_mineral_discovery_nigeria.png";
+import reforestationImage from "@assets/generated_images/tree_planting_reforestation_nigeria.png";
 
 const newsPosts = {
   "lithium-revolution": {
@@ -89,7 +92,7 @@ The integration of the new analytical systems into EMRL's laboratory workflow ha
     date: "August 25, 2025",
     category: "Sustainability",
     author: "HR Department",
-    img: communityProjectImage,
+    img: graduationImage,
     content: `Eminent Mines Resources Limited (EMRL) proudly announces the graduation of the first cohort from its flagship School of Mines training programme. Fifty young Nigerians have successfully completed comprehensive training in heavy machinery operation, advanced safety compliance, and modern mineral processing techniques, emerging as skilled professionals ready to contribute to Nigeria's growing mining industry.
 
 The graduation ceremony marked a historic occasion, celebrating not only the achievements of the fifty graduates but also the broader vision of professionalising Nigeria's mining sector through systematic skills development. The event brought together community leaders, government officials, industry representatives, and families of graduates in a celebration of educational achievement and economic opportunity.
@@ -105,7 +108,7 @@ EMRL has offered employment to all graduates of the first cohort, with positions
     date: "August 10, 2025",
     category: "Industry News",
     author: "Chief Geologist",
-    img: lithiumFieldImage,
+    img: discoveryImage,
     content: `Eminent Mines Resources Limited (EMRL) announces the discovery of significant tantalum concentrations in its northern licence areas, opening new opportunities in the critical minerals market and demonstrating the continued potential for major discoveries in Nigeria's underexplored terrain. Tantalum is classified as a critical mineral due to its essential role in electronics manufacturing and the concentrated nature of global supply.
 
 The discovery drill hole EMRL-TA-001 intersected 42 metres of high-grade tantalum mineralisation from 15 metres depth, with individual sample grades reaching 0.08% Ta₂O₅. Subsequent drill holes have confirmed the continuity of mineralisation across the target area, confirming the significant lateral extent of the mineralised system. This finding reinforces Nigeria's emerging role as a significant source of minerals required for the global energy transition and technology sector.
@@ -121,7 +124,7 @@ The current understanding of the deposit suggests significant resource potential
     date: "July 28, 2025",
     category: "Sustainability",
     author: "Environmental Team",
-    img: communityProjectImage,
+    img: reforestationImage,
     content: `Eminent Mines Resources Limited (EMRL) announces that its ambitious reforestation programme has reached a significant milestone, with 5,000 indigenous trees now planted across reclaimed mining areas. This achievement reflects EMRL's unwavering commitment to environmental stewardship and its innovative approach to concurrent reclamation—restoring land as mining progresses rather than waiting until operations conclude.
 
 The reforestation programme represents one of the most ambitious environmental restoration initiatives undertaken by any mining operation in Nigeria and demonstrates that extractive industries and environmental protection can coexist harmoniously. The milestone coincides with growing recognition of the importance of nature-based solutions to global environmental challenges, including climate change, biodiversity loss, and land degradation.

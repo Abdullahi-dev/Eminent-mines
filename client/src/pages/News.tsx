@@ -17,7 +17,7 @@ const articles = [
     id: "lithium-revolution",
     title: "Nigeria's Lithium Revolution: EMRL Leads the Way",
     excerpt: "The global demand for clean energy has placed Nigeria's lithium deposits in the spotlight. EMRL is leading the charge with sustainable extraction practices that prioritize both industrial output and environmental integrity.",
-    date: "Oct 24, 2025",
+    date: "October 24, 2025",
     author: "Engr. Yusuf Mohammed",
     category: "Industry News",
     image: lithiumFieldImage,
@@ -27,7 +27,7 @@ const articles = [
     id: "sustainable-mining",
     title: "Sustainable Mining: Integrating Community Growth",
     excerpt: "At EMRL, we believe mining should be a catalyst for local development. Our new 'School of Mines' initiative is providing young Nigerians with the technical skills needed to excel in the modern mining workforce.",
-    date: "Oct 12, 2025",
+    date: "October 12, 2025",
     author: "Dr. Amina Bello",
     category: "Sustainability",
     image: communityProjectImage,
@@ -37,7 +37,7 @@ const articles = [
     id: "global-investment",
     title: "Global Investment Forum: Mining in West Africa",
     excerpt: "The recent mining investment forum in Abuja highlighted the massive potential for international partnerships in Nigeria's solid mineral sector. EMRL showcased its portfolio of high-value assets to global investors.",
-    date: "Sep 28, 2025",
+    date: "September 28, 2025",
     author: "Executive Management",
     category: "Investor Relations",
     image: investorForumImage,
@@ -47,11 +47,41 @@ const articles = [
     id: "mineral-tech",
     title: "Advancements in Mineral Analysis Technology",
     excerpt: "Our laboratory division has recently integrated new XRF technology, allowing for even more precise mineral grade quantification. This advancement ensures that EMRL remains at the forefront of quality assurance.",
-    date: "Sep 15, 2025",
+    date: "September 15, 2025",
     author: "Lab Manager",
     category: "Technology",
     image: mineralTestingImage,
     tags: ["Laboratory", "Technology", "Quality Control"]
+  },
+  {
+    id: "school-graduation",
+    title: "School of Mines Graduates First Cohort",
+    excerpt: "EMRL celebrates the graduation of 50 local youth from our flagship training program. These skilled professionals are now ready to contribute to Nigeria's growing mining industry.",
+    date: "August 25, 2025",
+    author: "HR Department",
+    category: "Sustainability",
+    image: communityProjectImage,
+    tags: ["Education", "Graduation", "Skills"]
+  },
+  {
+    id: "tantalum-discovery",
+    title: "New Discovery: High-Grade Tantalum Deposits",
+    excerpt: "EMRL's exploration teams have identified significant tantalum concentrations in our northern licenses, opening new opportunities in the critical minerals market.",
+    date: "August 10, 2025",
+    author: "Chief Geologist",
+    category: "Industry News",
+    image: lithiumFieldImage,
+    tags: ["Tantalum", "Discovery", "Critical Minerals"]
+  },
+  {
+    id: "environmental-excellence",
+    title: "Environmental Excellence: 5,000 Trees Planted",
+    excerpt: "EMRL's reforestation program reaches milestone with 5,000 indigenous trees planted in reclaimed mining areas, restoring local biodiversity and preventing soil erosion.",
+    date: "July 28, 2025",
+    author: "Environmental Team",
+    category: "Sustainability",
+    image: communityProjectImage,
+    tags: ["Environment", "Reforestation", "Sustainability"]
   }
 ];
 

@@ -7,6 +7,7 @@ import { Link } from "wouter";
 import lithiumFieldImage from "@assets/WhatsApp_Image_2025-12-04_at_11.17.41_PM_1767759299456.jpeg";
 import communityProjectImage from "@assets/image_1767761769382.png";
 import investorForumImage from "@assets/generated_images/nigerian_mining_investment_forum_scene.png";
+import mineralTestingImage from "@assets/generated_images/mineral_testing_laboratory.png";
 
 const newsPosts = {
   "lithium-revolution": {

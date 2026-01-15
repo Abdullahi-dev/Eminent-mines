@@ -79,7 +79,7 @@ export function Navbar() {
             </Link>
           ))}
           <a 
-            href="https://wa.me/2349076929317?text=Hello%20EMRL%20Founder%2C%20I%20am%20visiting%20your%20website%20and%20I%20would%20like%20to%20request%20a%20quote%20for%20your%20mining%20services."
+            href={`https://wa.me/2349076929317?text=${encodeURIComponent("Hello EMRL Founder, I am visiting your website and I would like to request a quote for your mining services.")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-1 xl:ml-2"
@@ -110,7 +110,7 @@ export function Navbar() {
             </Link>
           ))}
           <a 
-            href="https://wa.me/2349076929317?text=Hello%20EMRL%20Founder%2C%20I%20am%20visiting%20your%20website%20and%20I%20would%20like%20to%20request%20a%20quote%20for%20your%20mining%20services."
+            href={`https://wa.me/2349076929317?text=${encodeURIComponent("Hello EMRL Founder, I am visiting your website and I would like to request a quote for your mining services.")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full"

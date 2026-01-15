@@ -225,7 +225,7 @@ export default function Services() {
                 <Button 
                   size="lg" 
                   className="w-full bg-primary hover:bg-primary/90 text-white font-black text-lg h-16 rounded-2xl shadow-2xl transition-all hover:-translate-y-1"
-                  onClick={() => window.open('https://wa.me/2349076929317?text=Hello%20EMRL%2C%20I%20am%20interested%20in%20partnering%20with%20your%20mining%20services.', '_blank')}
+                  onClick={() => window.open(`https://wa.me/2349076929317?text=${encodeURIComponent("Hello EMRL, I am visiting your website and I am interested in partnering with your mining services.")}`, '_blank')}
                 >
                   Partner With Us
                 </Button>

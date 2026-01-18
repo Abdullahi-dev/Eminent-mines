@@ -71,6 +71,6 @@ Preferred communication style: Simple, everyday language.
 ### Fonts (External CDN)
 - Google Fonts: Inter, Roboto (body), Montserrat, Poppins (headings)
 
-### Development Tools
-- **Replit Plugins**: Runtime error overlay, cartographer, dev banner
+### Developer
+- *Devabdultechnologies*: Runtime error overlay, cartographer, dev banner
 - **Build**: esbuild for server bundling, Vite for client

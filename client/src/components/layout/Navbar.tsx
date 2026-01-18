@@ -38,7 +38,7 @@ export function Navbar() {
           <p className="hidden lg:block font-bold italic">If it can't be grown; it has to be mined!!!</p>
           <div className="flex items-center gap-6 w-full lg:w-auto justify-between lg:justify-end flex-wrap">
             <span className="flex items-center gap-2"><Phone className="h-3 w-3" /> +234 907 692 9317</span>
-            <span className="flex items-center gap-2"><Mail className="h-3 w-3" /> info@emrl.com</span>
+            <span className="flex items-center gap-2"><Mail className="h-3 w-3" /> info@emrl.com.ng</span>
             {/* Social Links */}
             <div className="flex gap-2">
               {socialLinks.map(({ Icon, href, label }) => (

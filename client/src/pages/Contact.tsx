@@ -5,8 +5,31 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { toast } from "sonner";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function Contact() {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const formElement = e.currentTarget;
+    const formData = new FormData(formElement);
+    const payload = {
+      firstName: String(formData.get("firstName") || ""),
+      lastName: String(formData.get("lastName") || ""),
+      email: String(formData.get("email") || ""),
+      subject: String(formData.get("subject") || ""),
+      message: String(formData.get("message") || ""),
+    };
+    try {
+      await apiRequest("POST", "/api/contact", payload);
+      toast.success("Message Sent", { description: "We will reply via email." });
+      // Reset form immediately after successful submission
+      formElement.reset();
+    } catch (err: any) {
+      toast.error("Failed to send message", { description: err?.message || "Please try again later." });
+    }
+  }
+
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white">
       <Navbar />
@@ -27,30 +50,30 @@ export default function Contact() {
               <Card className="border-none shadow-lg bg-zinc-50">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold font-heading mb-6">Send us a message</h3>
-                  <form className="space-y-6">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label className="text-sm font-medium">First Name</label>
-                        <Input placeholder="John" className="bg-white" />
+                        <Input name="firstName" placeholder="John" className="bg-white" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm font-medium">Last Name</label>
-                        <Input placeholder="Doe" className="bg-white" />
+                        <Input name="lastName" placeholder="Doe" className="bg-white" />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Email Address</label>
-                      <Input type="email" placeholder="john@example.com" className="bg-white" />
+                      <Input name="email" type="email" placeholder="john@example.com" className="bg-white" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Subject</label>
-                      <Input placeholder="Inquiry about mining services" className="bg-white" />
+                      <Input name="subject" placeholder="Inquiry about mining services" className="bg-white" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Message</label>
-                      <Textarea placeholder="How can we help you?" className="min-h-[150px] bg-white" />
+                      <Textarea name="message" placeholder="How can we help you?" className="min-h-[150px] bg-white" />
                     </div>
-                    <Button className="w-full md:w-auto px-8 bg-primary hover:bg-primary/90 text-white font-bold h-12">
+                    <Button type="submit" className="w-full md:w-auto px-8 bg-primary hover:bg-primary/90 text-white font-bold h-12">
                       Send Message
                     </Button>
                   </form>
@@ -81,7 +104,7 @@ export default function Contact() {
                     <Mail className="text-primary h-6 w-6 shrink-0" />
                     <div>
                       <p className="font-bold mb-1">Email</p>
-                      <p className="text-gray-400 text-sm">info@emrl.com<br />support@emrl.com</p>
+                      <p className="text-gray-400 text-sm">info@emrl.com.ng<br />support@emrl.com.ng</p>
                     </div>
                   </div>
                   <div className="flex gap-4">

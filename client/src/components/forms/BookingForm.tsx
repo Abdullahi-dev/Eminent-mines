@@ -12,6 +12,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
+import { apiRequest } from "@/lib/queryClient";
 
 const formSchema = z.object({
   companyName: z.string().min(2, "Company name is required"),
@@ -26,24 +27,41 @@ const formSchema = z.object({
 export function BookingForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      companyName: "",
+      contactPerson: "",
+      email: "",
+      phone: "",
+      equipmentType: "",
+      duration: "",
+      startDate: undefined,
+    },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    const message = `Hello EMRL Equipment Manager, I am visiting your website and I would like to book the following equipment:
-- Company: ${values.companyName}
-- Contact: ${values.contactPerson}
-- Equipment: ${values.equipmentType}
-- Duration: ${values.duration}
-- Start Date: ${format(values.startDate, "PPP")}
-
-Please provide a quote.`;
-    
-    window.open(`https://wa.me/2349076929317?text=${encodeURIComponent(message)}`, '_blank');
-    
-    toast.success("Booking Request Initiated", {
-      description: "Redirecting to WhatsApp to complete your request.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      await apiRequest("POST", "/api/booking", {
+        ...values,
+        startDate: values.startDate.toISOString(),
+      });
+      // Reset form immediately after successful API call
+      form.reset({
+        companyName: "",
+        contactPerson: "",
+        email: "",
+        phone: "",
+        equipmentType: "",
+        duration: "",
+        startDate: undefined,
+      });
+      toast.success("Booking Request Sent", {
+        description: "We will get back to you with a quote shortly.",
+      });
+    } catch (err: any) {
+      toast.error("Failed to send booking", {
+        description: err?.message || "Please try again later.",
+      });
+    }
   }
 
   return (

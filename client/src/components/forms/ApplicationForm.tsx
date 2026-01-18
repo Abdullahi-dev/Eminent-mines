@@ -4,11 +4,12 @@ import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { toast } from "sonner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { apiRequest } from "@/lib/queryClient";
 import { FileText } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Name must be at least 2 characters"),
@@ -35,7 +36,7 @@ export function ApplicationForm() {
       phone: "",
       dateOfBirth: "",
       gender: "",
-      nationality: "Nigerian",
+      nationality: "",
       stateOfOrigin: "",
       program: "",
       education: "",
@@ -46,12 +47,33 @@ export function ApplicationForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast.success("Admissions Portal: Application Received", {
-      description: "Your comprehensive application has been logged. Our board will review your credentials.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      await apiRequest("POST", "/api/application", values);
+      // Reset form immediately after successful API call
+      form.reset({
+        fullName: "",
+        email: "",
+        phone: "",
+        dateOfBirth: "",
+        gender: "",
+        nationality: "",
+        stateOfOrigin: "",
+        program: "",
+        education: "",
+        institutionAttended: "",
+        yearOfGraduation: "",
+        employmentStatus: "",
+        message: "",
+      });
+      toast.success("Application Submitted", {
+        description: "We will review and reach out via email.",
+      });
+    } catch (err: any) {
+      toast.error("Failed to submit application", {
+        description: err?.message || "Please try again later.",
+      });
+    }
   }
 
   return (
@@ -281,9 +303,7 @@ export function ApplicationForm() {
               />
             </div>
 
-            <Button type="submit" className="w-full h-14 bg-primary hover:bg-primary/90 text-white font-black text-lg rounded-xl shadow-lg transition-all active:scale-95">
-              Submit Final Application
-            </Button>
+            <Button type="submit" className="w-full font-bold bg-zinc-900 hover:bg-zinc-800">Submit Application</Button>
             <p className="text-[10px] text-zinc-400 text-center uppercase tracking-widest font-bold">EMRL Official Admissions Portal v2.0</p>
           </form>
         </Form>

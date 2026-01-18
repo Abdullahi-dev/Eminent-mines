@@ -3,10 +3,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { toast } from "sonner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { apiRequest } from "@/lib/queryClient";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Name is required"),
@@ -20,14 +21,36 @@ const formSchema = z.object({
 export function RegistrationForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      fullName: "",
+      email: "",
+      phone: "",
+      membershipType: "",
+      profession: "",
+      yearsExperience: "",
+    },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast.success("Registration Successful", {
-      description: "Welcome to the EMRL Professional Body. We will email your membership ID shortly.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      await apiRequest("POST", "/api/registration", values);
+      // Reset form immediately after successful API call
+      form.reset({
+        fullName: "",
+        email: "",
+        phone: "",
+        membershipType: "",
+        profession: "",
+        yearsExperience: "",
+      });
+      toast.success("Registration Submitted", {
+        description: "We will contact you with next steps.",
+      });
+    } catch (err: any) {
+      toast.error("Failed to submit registration", {
+        description: err?.message || "Please try again later.",
+      });
+    }
   }
 
   return (
@@ -129,7 +152,7 @@ export function RegistrationForm() {
                 )}
               />
              </div>
-            <Button type="submit" className="w-full font-bold">Complete Registration</Button>
+            <Button type="submit" className="w-full font-bold bg-zinc-900 hover:bg-zinc-800">Submit Registration</Button>
           </form>
         </Form>
       </CardContent>

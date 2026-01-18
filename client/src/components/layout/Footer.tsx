@@ -18,8 +18,8 @@ export function Footer() {
     },
     onSuccess: () => {
       toast({
-        title: "Success!",
-        description: "You've been added to our newsletter.",
+        title: "Thank you for subscribing!",
+        description: "You’re now on our newsletter list.",
       });
       setEmail("");
     },
@@ -150,7 +150,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                <a href="mailto:info@emrl.com" className="hover:text-white transition-colors">info@emrl.com</a>
+                <a href="mailto:info@emrl.com.ng" className="hover:text-white transition-colors">info@emrl.com.ng</a>
               </li>
             </ul>
 

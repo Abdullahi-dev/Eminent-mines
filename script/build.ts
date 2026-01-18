@@ -59,6 +59,22 @@ async function buildAll() {
     external: externals,
     logLevel: "info",
   });
+
+  // Build optimized version for Vercel
+  console.log("building optimized server for Vercel...");
+  await esbuild({
+    entryPoints: ["server/index-optimized.ts"],
+    platform: "node",
+    bundle: true,
+    format: "cjs",
+    outfile: "dist/index-optimized.cjs",
+    define: {
+      "process.env.NODE_ENV": '"production"',
+    },
+    minify: true,
+    external: externals,
+    logLevel: "info",
+  });
 }
 
 buildAll().catch((err) => {

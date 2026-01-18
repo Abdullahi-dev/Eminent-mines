@@ -5,10 +5,10 @@ import { insertNewsletterSubscriberSchema } from "../shared/schema";
 import { ZodError, z } from "zod";
 import { sendEmail } from "./email";
 
-export async function registerRoutes(
+export function registerRoutes(
   httpServer: Server,
   app: Express
-): Promise<Server> {
+): Server {
   // prefix all routes with /api
 
   // Newsletter subscribe
@@ -17,18 +17,17 @@ export async function registerRoutes(
       const data = insertNewsletterSubscriberSchema.parse(req.body);
       const subscriber = await storage.subscribeToNewsletter(data);
 
-      // Try to notify company; fail silently if SMTP not configured
-      try {
-        const toEmail = process.env.COMPANY_EMAIL || process.env.SMTP_USER || "";
-        if (toEmail) {
-          await sendEmail({
-            to: toEmail,
-            subject: "[EMRL] New Newsletter Subscriber",
-            text: `Email: ${subscriber.email}`,
-          });
-        }
-      } catch (e) {
-        // no-op, keep success response
+      // Send email notification asynchronously (don't wait for it)
+      const toEmail = process.env.COMPANY_EMAIL || process.env.SMTP_USER || "";
+      if (toEmail) {
+        // Fire and forget - don't await the email sending
+        sendEmail({
+          to: toEmail,
+          subject: "[EMRL] New Newsletter Subscriber",
+          text: `Email: ${subscriber.email}`,
+        }).catch(error => {
+          console.error("Failed to send newsletter notification email:", error);
+        });
       }
 
       res.json(subscriber);
@@ -57,11 +56,16 @@ export async function registerRoutes(
       const v = schema.parse(req.body);
       const toEmail = process.env.COMPANY_EMAIL || process.env.SMTP_USER;
       if (!toEmail) throw new Error("Email not configured");
-      await sendEmail({
+      
+      // Send email notification asynchronously (don't wait for it)
+      sendEmail({
         to: toEmail,
         subject: "[EMRL] New Equipment Booking Request",
         text: `Booking Request\n${JSON.stringify(v, null, 2)}`,
+      }).catch(error => {
+        console.error("Failed to send booking notification email:", error);
       });
+      
       res.json({ ok: true });
     } catch (error: any) {
       if (error instanceof ZodError) {
@@ -87,11 +91,16 @@ export async function registerRoutes(
       const v = schema.parse(req.body);
       const toEmail = process.env.COMPANY_EMAIL || process.env.SMTP_USER;
       if (!toEmail) throw new Error("Email not configured");
-      await sendEmail({
+      
+      // Send email notification asynchronously (don't wait for it)
+      sendEmail({
         to: toEmail,
         subject: "[EMRL] New Membership Registration",
         text: `Registration\n${JSON.stringify(v, null, 2)}`,
+      }).catch(error => {
+        console.error("Failed to send registration notification email:", error);
       });
+      
       res.json({ ok: true });
     } catch (error: any) {
       if (error instanceof ZodError) {
@@ -124,11 +133,16 @@ export async function registerRoutes(
       const v = schema.parse(req.body);
       const toEmail = process.env.COMPANY_EMAIL || process.env.SMTP_USER;
       if (!toEmail) throw new Error("Email not configured");
-      await sendEmail({
+      
+      // Send email notification asynchronously (don't wait for it)
+      sendEmail({
         to: toEmail,
         subject: "[EMRL] New School Application",
         text: `Application\n${JSON.stringify(v, null, 2)}`,
+      }).catch(error => {
+        console.error("Failed to send application notification email:", error);
       });
+      
       res.json({ ok: true });
     } catch (error: any) {
       if (error instanceof ZodError) {
@@ -153,11 +167,16 @@ export async function registerRoutes(
       const v = schema.parse(req.body);
       const toEmail = process.env.COMPANY_EMAIL || process.env.SMTP_USER;
       if (!toEmail) throw new Error("Email not configured");
-      await sendEmail({
+      
+      // Send email notification asynchronously (don't wait for it)
+      sendEmail({
         to: toEmail,
         subject: `[EMRL] Contact: ${v.subject}`,
         text: `From: ${v.firstName} ${v.lastName} <${v.email}>\n\n${v.message}`,
+      }).catch(error => {
+        console.error("Failed to send contact notification email:", error);
       });
+      
       res.json({ ok: true });
     } catch (error: any) {
       if (error instanceof ZodError) {

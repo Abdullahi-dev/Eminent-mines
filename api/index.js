@@ -4,8 +4,8 @@
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
-// Import the compiled server and extract the app
-const serverModule = require('../dist/index.cjs');
+// Import the optimized compiled server and extract the app
+const serverModule = require('../dist/index-optimized.cjs');
 
 // Export the app for Vercel serverless function
 export default serverModule.app;

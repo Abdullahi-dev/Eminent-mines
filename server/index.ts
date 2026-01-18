@@ -71,51 +71,59 @@ app.use((req, res, next) => {
   next();
 });
 
-(async () => {
-  await registerRoutes(httpServer, app);
+// Synchronous route registration for Vercel compatibility
+log("Starting server initialization...");
+const startTime = Date.now();
 
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
+// Register routes synchronously - this is the key fix for Vercel
+registerRoutes(httpServer, app);
+const routeTime = Date.now() - startTime;
+log(`Routes registered in ${routeTime}ms`);
 
-    res.status(status).json({ message });
-    throw err;
+// Error handling middleware
+app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+  const status = err.status || err.statusCode || 500;
+  const message = err.message || "Internal Server Error";
+
+  res.status(status).json({ message });
+  throw err;
+});
+
+// Setup static serving or Vite (non-blocking for Vercel)
+if (process.env.API_ONLY === "true") {
+  // API-only mode: do not attach Vite or static serving
+} else if (process.env.NODE_ENV === "production") {
+  serveStatic(app);
+} else {
+  // Only setup Vite in development (non-blocking)
+  import("./vite").then(({ setupVite }) => {
+    setupVite(httpServer, app).catch((err) => {
+      log(`Failed to setup Vite: ${err.message}`);
+    });
   });
+}
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
-  if (process.env.API_ONLY === "true") {
-    // API-only mode: do not attach Vite or static serving
-  } else if (process.env.NODE_ENV === "production") {
-    serveStatic(app);
-  } else {
-    const { setupVite } = await import("./vite");
-    await setupVite(httpServer, app);
-  }
+// ALWAYS serve the app on the port specified in the environment variable PORT
+// Other ports are firewalled. Default to 5000 if not specified.
+// this serves both the API and the client.
+// It is the only port that is not firewalled.
+const port = parseInt(process.env.PORT || "5000", 10);
+const host = process.env.API_HOST || (process.env.API_ONLY === "true" ? "127.0.0.1" : "0.0.0.0");
+const reusePort = process.platform !== "win32";
 
-  // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || "5000", 10);
-  const host = process.env.API_HOST || (process.env.API_ONLY === "true" ? "127.0.0.1" : "0.0.0.0");
-  const reusePort = process.platform !== "win32";
-  
-  // Only start the server if not in a serverless environment (like Vercel)
-  if (process.env.VERCEL !== "1" && process.env.NODE_ENV !== "production") {
-    httpServer.listen(
-      {
-        port,
-        host,
-        reusePort,
-      },
-      () => {
-        log(`serving on ${host}:${port}`);
-      },
-    );
-  }
-})();
+// Only start the server if not in a serverless environment (like Vercel)
+if (process.env.VERCEL !== "1" && process.env.NODE_ENV !== "production") {
+  httpServer.listen(
+    {
+      port,
+      host,
+      reusePort,
+    },
+    () => {
+      log(`serving on ${host}:${port}`);
+    },
+  );
+}
 
 // Export the app for Vercel serverless function
 export { app };

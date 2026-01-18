@@ -4,6 +4,8 @@
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
+let app;
+
 try {
   console.log('[Vercel API] Loading optimized server module...');
   
@@ -13,9 +15,8 @@ try {
   console.log('[Vercel API] Server module loaded:', typeof serverModule);
   console.log('[Vercel API] Server module keys:', Object.keys(serverModule));
   
-  // Export the app for Vercel serverless function
-  // The optimized server exports 'app' directly
-  const app = serverModule.app || serverModule;
+  // Extract the app from the server module
+  app = serverModule.app || serverModule;
   
   console.log('[Vercel API] App extracted:', typeof app);
   
@@ -23,20 +24,21 @@ try {
     throw new Error('Invalid app export from server module');
   }
   
-  export default app;
-  
 } catch (error) {
   console.error('[Vercel API] Failed to load server module:', error);
   
-  // Return a minimal error handler app
-  const errorApp = (req, res) => {
-    res.statusCode = 500;
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ 
+  // Create a minimal error handler app
+  const express = require('express');
+  const errorApp = express();
+  errorApp.use((req, res) => {
+    res.status(500).json({ 
       error: 'Server initialization failed',
       message: error.message 
-    }));
-  };
+    });
+  });
   
-  export default errorApp;
+  app = errorApp;
 }
+
+// Export the app at the top level
+export default app;

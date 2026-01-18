@@ -1,5 +1,6 @@
 import 'dotenv/config'
 import express, { type Request, Response, NextFunction } from "express";
+import cors from "cors";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
@@ -22,6 +23,16 @@ app.use(
 );
 
 app.use(express.urlencoded({ extended: false }));
+
+// CORS configuration for production deployment
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' 
+    ? true // Allow all origins in production for now (you can restrict this later)
+    : ['http://localhost:5173', 'http://localhost:5000'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {

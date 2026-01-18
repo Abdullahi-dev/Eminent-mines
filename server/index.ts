@@ -90,14 +90,21 @@ app.use((req, res, next) => {
   const port = parseInt(process.env.PORT || "5000", 10);
   const host = process.env.API_HOST || (process.env.API_ONLY === "true" ? "127.0.0.1" : "0.0.0.0");
   const reusePort = process.platform !== "win32";
-  httpServer.listen(
-    {
-      port,
-      host,
-      reusePort,
-    },
-    () => {
-      log(`serving on ${host}:${port}`);
-    },
-  );
+  
+  // Only start the server if not in a serverless environment (like Vercel)
+  if (process.env.VERCEL !== "1" && process.env.NODE_ENV !== "production") {
+    httpServer.listen(
+      {
+        port,
+        host,
+        reusePort,
+      },
+      () => {
+        log(`serving on ${host}:${port}`);
+      },
+    );
+  }
 })();
+
+// Export the app for Vercel serverless function
+export { app };

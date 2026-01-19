@@ -19,14 +19,18 @@ export function registerRoutes(
 
       // Send email notification with proper error handling
       const toEmail = process.env.COMPANY_EMAIL || process.env.SMTP_USER || "";
+      console.log("[Newsletter] Preparing to send notification to:", toEmail);
+      console.log("[Newsletter] COMPANY_EMAIL:", process.env.COMPANY_EMAIL);
+      console.log("[Newsletter] SMTP_USER:", process.env.SMTP_USER);
+      
       if (toEmail) {
         try {
           await sendEmail({
             to: toEmail,
             subject: "[EMRL] New Newsletter Subscriber",
-            text: `Email: ${subscriber.email}`,
+            text: `New newsletter subscriber: ${subscriber.email}`,
           });
-          console.log("[Newsletter] Email notification sent successfully");
+          console.log("[Newsletter] Email notification sent successfully to:", toEmail);
         } catch (error) {
           console.error("[Newsletter] Failed to send email notification:", error);
           // Don't fail the request if email fails - just log it
@@ -35,7 +39,10 @@ export function registerRoutes(
         console.warn("[Newsletter] No COMPANY_EMAIL or SMTP_USER configured for notifications");
       }
 
-      res.json(subscriber);
+      res.json({
+        message: "Successfully subscribed to newsletter!",
+        subscriber: subscriber
+      });
     } catch (error) {
       if (error instanceof ZodError) {
         res.status(400).json({ message: "Invalid email address" });

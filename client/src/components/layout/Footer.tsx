@@ -14,12 +14,13 @@ export function Footer() {
 
   const subscribeMutation = useMutation({
     mutationFn: async (email: string) => {
-      return await apiRequest("POST", "/api/newsletter/subscribe", { email });
+      const response = await apiRequest("POST", "/api/newsletter/subscribe", { email });
+      return await response.json();
     },
     onSuccess: () => {
       toast({
         title: "Thank you for subscribing!",
-        description: "You’re now on our newsletter list.",
+        description: "You're now on our newsletter list.",
       });
       setEmail("");
     },

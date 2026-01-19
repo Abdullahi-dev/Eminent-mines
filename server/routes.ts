@@ -17,17 +17,22 @@ export function registerRoutes(
       const data = insertNewsletterSubscriberSchema.parse(req.body);
       const subscriber = await storage.subscribeToNewsletter(data);
 
-      // Send email notification asynchronously (don't wait for it)
+      // Send email notification with proper error handling
       const toEmail = process.env.COMPANY_EMAIL || process.env.SMTP_USER || "";
       if (toEmail) {
-        // Fire and forget - don't await the email sending
-        sendEmail({
-          to: toEmail,
-          subject: "[EMRL] New Newsletter Subscriber",
-          text: `Email: ${subscriber.email}`,
-        }).catch(error => {
-          console.error("Failed to send newsletter notification email:", error);
-        });
+        try {
+          await sendEmail({
+            to: toEmail,
+            subject: "[EMRL] New Newsletter Subscriber",
+            text: `Email: ${subscriber.email}`,
+          });
+          console.log("[Newsletter] Email notification sent successfully");
+        } catch (error) {
+          console.error("[Newsletter] Failed to send email notification:", error);
+          // Don't fail the request if email fails - just log it
+        }
+      } else {
+        console.warn("[Newsletter] No COMPANY_EMAIL or SMTP_USER configured for notifications");
       }
 
       res.json(subscriber);
@@ -57,14 +62,18 @@ export function registerRoutes(
       const toEmail = process.env.COMPANY_EMAIL || process.env.SMTP_USER;
       if (!toEmail) throw new Error("Email not configured");
       
-      // Send email notification asynchronously (don't wait for it)
-      sendEmail({
-        to: toEmail,
-        subject: "[EMRL] New Equipment Booking Request",
-        text: `Booking Request\n${JSON.stringify(v, null, 2)}`,
-      }).catch(error => {
-        console.error("Failed to send booking notification email:", error);
-      });
+      // Send email notification with proper error handling
+      try {
+        await sendEmail({
+          to: toEmail,
+          subject: "[EMRL] New Equipment Booking Request",
+          text: `Booking Request\n${JSON.stringify(v, null, 2)}`,
+        });
+        console.log("[Booking] Email notification sent successfully");
+      } catch (error) {
+        console.error("[Booking] Failed to send email notification:", error);
+        // Don't fail the request if email fails - just log it
+      }
       
       res.json({ ok: true });
     } catch (error: any) {
@@ -92,14 +101,18 @@ export function registerRoutes(
       const toEmail = process.env.COMPANY_EMAIL || process.env.SMTP_USER;
       if (!toEmail) throw new Error("Email not configured");
       
-      // Send email notification asynchronously (don't wait for it)
-      sendEmail({
-        to: toEmail,
-        subject: "[EMRL] New Membership Registration",
-        text: `Registration\n${JSON.stringify(v, null, 2)}`,
-      }).catch(error => {
-        console.error("Failed to send registration notification email:", error);
-      });
+      // Send email notification with proper error handling
+      try {
+        await sendEmail({
+          to: toEmail,
+          subject: "[EMRL] New Membership Registration",
+          text: `Registration\n${JSON.stringify(v, null, 2)}`,
+        });
+        console.log("[Registration] Email notification sent successfully");
+      } catch (error) {
+        console.error("[Registration] Failed to send email notification:", error);
+        // Don't fail the request if email fails - just log it
+      }
       
       res.json({ ok: true });
     } catch (error: any) {
@@ -134,14 +147,18 @@ export function registerRoutes(
       const toEmail = process.env.COMPANY_EMAIL || process.env.SMTP_USER;
       if (!toEmail) throw new Error("Email not configured");
       
-      // Send email notification asynchronously (don't wait for it)
-      sendEmail({
-        to: toEmail,
-        subject: "[EMRL] New School Application",
-        text: `Application\n${JSON.stringify(v, null, 2)}`,
-      }).catch(error => {
-        console.error("Failed to send application notification email:", error);
-      });
+      // Send email notification with proper error handling
+      try {
+        await sendEmail({
+          to: toEmail,
+          subject: "[EMRL] New School Application",
+          text: `Application\n${JSON.stringify(v, null, 2)}`,
+        });
+        console.log("[Application] Email notification sent successfully");
+      } catch (error) {
+        console.error("[Application] Failed to send email notification:", error);
+        // Don't fail the request if email fails - just log it
+      }
       
       res.json({ ok: true });
     } catch (error: any) {
@@ -168,14 +185,18 @@ export function registerRoutes(
       const toEmail = process.env.COMPANY_EMAIL || process.env.SMTP_USER;
       if (!toEmail) throw new Error("Email not configured");
       
-      // Send email notification asynchronously (don't wait for it)
-      sendEmail({
-        to: toEmail,
-        subject: `[EMRL] Contact: ${v.subject}`,
-        text: `From: ${v.firstName} ${v.lastName} <${v.email}>\n\n${v.message}`,
-      }).catch(error => {
-        console.error("Failed to send contact notification email:", error);
-      });
+      // Send email notification with proper error handling
+      try {
+        await sendEmail({
+          to: toEmail,
+          subject: `[EMRL] Contact: ${v.subject}`,
+          text: `From: ${v.firstName} ${v.lastName} <${v.email}>\n\n${v.message}`,
+        });
+        console.log("[Contact] Email notification sent successfully");
+      } catch (error) {
+        console.error("[Contact] Failed to send email notification:", error);
+        // Don't fail the request if email fails - just log it
+      }
       
       res.json({ ok: true });
     } catch (error: any) {
@@ -184,6 +205,35 @@ export function registerRoutes(
       } else {
         res.status(500).json({ message: error?.message || "Email service error" });
       }
+    }
+  });
+
+  // Test email route for debugging
+  app.post("/api/test-email", async (req, res) => {
+    try {
+      const toEmail = process.env.COMPANY_EMAIL || process.env.SMTP_USER;
+      if (!toEmail) {
+        return res.status(400).json({ message: "Email not configured" });
+      }
+
+      console.log("[Test Email] Attempting to send test email to:", toEmail);
+      console.log("[Test Email] SMTP_USER:", process.env.SMTP_USER);
+      console.log("[Test Email] COMPANY_EMAIL:", process.env.COMPANY_EMAIL);
+      
+      const result = await sendEmail({
+        to: toEmail,
+        subject: "[EMRL] Test Email - Debugging",
+        text: "This is a test email to verify SMTP configuration is working correctly.",
+      });
+      
+      console.log("[Test Email] Test email sent successfully:", result.messageId);
+      res.json({ message: "Test email sent successfully", messageId: result.messageId });
+    } catch (error) {
+      console.error("[Test Email] Failed to send test email:", error);
+      res.status(500).json({ 
+        message: "Failed to send test email", 
+        error: error instanceof Error ? error.message : String(error) 
+      });
     }
   });
 
